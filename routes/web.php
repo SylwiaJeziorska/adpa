@@ -18,3 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/newPassword', function (){
+    return view('auth/passwords/changepassword');
+});
+//    'HomeController@changePassword')->name('changePassword');
+Route::post('/changePassword','HomeController@changePassword')->name('changePassword');
