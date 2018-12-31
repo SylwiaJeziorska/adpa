@@ -20,6 +20,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/newPassword', function (){
     return view('auth/passwords/changepassword');
-});
-//    'HomeController@changePassword')->name('changePassword');
+})->name('newPassword');
 Route::post('/changePassword','HomeController@changePassword')->name('changePassword');
+Route::get('/posts', 'PostController@index');

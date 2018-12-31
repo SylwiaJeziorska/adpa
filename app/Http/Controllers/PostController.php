@@ -2,11 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Middleware\CheckUser;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware(CheckUser::class);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +19,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        dd('helloo');
     }
 
     /**
