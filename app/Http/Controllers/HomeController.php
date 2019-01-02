@@ -31,6 +31,7 @@ class HomeController extends Controller
     }
     public function changePassword(Request $request){
 //
+//        dd($request);
         if (!(Hash::check($request->get('current-password'), Auth::user()->password))) {
             // The passwords matches
             return redirect()->back()->with("error","Your current password does not matches with the password you provided. Please try again.");
@@ -45,15 +46,52 @@ class HomeController extends Controller
         $validatedData =$this->validate($request, [
             'current-password' => 'required',
             'new-password' => 'required|string|min:6|confirmed',
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
             ]);
 
         //Change Password
         $user = Auth::user();
         $user->password = bcrypt($request->get('new-password'));
         $user->password_change_at =Carbon::now();
+        $user->email =$request['email'];
+        $user->name =$request['name'];
+
         $user->save();
 
-        return redirect()->back()->with("success","Password changed successfully !");
+        return view('home');
 
+    }
+    public function userdata(){
+        $file = public_path('file/data.csv');
+
+        if (!file_exists($file) || !is_readable($file)) {
+            return false;
+
+        }
+
+        $delimiter = ',';
+        $header = null;
+        $userdata = array();
+        if (($handle = fopen($file, 'r')) !== false) {
+            while (($row = fgetcsv($handle, 1000, $delimiter)) !== false) {
+                if (!$header)
+                    $header = $row;
+                else
+                    $userdata[] = array_combine($header, $row);
+            }
+            fclose($handle);
+        }
+//echo phpinfo();
+
+        for ($i = 400; $i < 500; $i++) {
+            $newPassword = Hash::make($userdata[$i]['password']);
+            $user = new User;
+            $user->username = $userdata[$i]['username'];
+            $user->password = $newPassword;
+            $user->save();
+
+
+        }
     }
 }

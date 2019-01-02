@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Middleware\CheckUser;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class PostController extends Controller
 {
@@ -19,9 +21,10 @@ class PostController extends Controller
      */
     public function index()
     {
-        dd('helloo');
-    }
 
+
+
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -87,4 +90,5 @@ class PostController extends Controller
     {
         //
     }
+
 }

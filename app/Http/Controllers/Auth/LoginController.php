@@ -26,8 +26,17 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
 
+   protected $redirectTo =  '/newPassword';
+    protected function authenticated(Request $request, $user)
+    {
+        if ( $user-> password_change_at == null  ) {
+
+            return redirect()->route('newPassword');
+        }
+
+        return redirect('/home');
+    }
     /**
      * Create a new controller instance.
      *
@@ -35,6 +44,7 @@ class LoginController extends Controller
      */
     public function __construct()
     {
+
         $this->middleware('guest')->except('logout');
     }
     /**
