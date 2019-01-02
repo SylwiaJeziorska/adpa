@@ -4,9 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use Illuminate\Http\Request;
+use App\Http\Middleware\CheckUser;
+
 
 class PostController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(CheckUser::class);
+    }
+
     /**
      * Display a listing of the resource.
      *
