@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Post;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Validator;
-
+use Mailjet\LaravelMailjet\Facades\Mailjet;
+use \Mailjet\Resources;
 class HomeController extends Controller
 {
     /**
@@ -28,6 +30,31 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+    public function newsLetter($id){
+        $mailjet = new \Mailjet\Client(('b4407f5d1e52e1ad89c98f8cfc1fdaf3'),('20fd1f38fe1b5cf2a1112a6fbba92a5d'));
+
+        $post = Post::find($id);
+//                dd($post['content']);
+
+        // Send transactional emails (note: prefer using SwiftMailer to send transactionnal emails)
+
+        $body = [
+            'FromEmail' => "mailjet@comite-adpa.fr",
+            'FromName' => "Mailjet Pilot",
+            'Subject' => "Your email flight plan!",
+            'Text-part' => $post,
+            'Html-part' => "<h3>{$post['content']}</h3><br />May the delivery force be with you!",
+            'Recipients' => [['Email' => "sylwiajeziorska@gmail.com"]]
+        ];
+
+//dd(Resources::$Email);
+        $response = $mailjet->post(Resources::$Email, ['body' => $body]);
+//        $response->success() && var_dump($response->getData());
+                if ($response->success())
+           echo 'succes';
+        else
+            var_dump($response->getStatus());
     }
     public function changePassword(Request $request){
 //

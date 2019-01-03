@@ -7,3 +7,25 @@
 
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+#login-blade{
+  background-image: url('http://127.0.0.1:8000/img/bcg.jpg');
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+  div{
+  }
+}
+#app-navbar-collapse{
+  background: #847F80;
+  color:white
+}
+.navbar-default {
+  .navbar-nav {
+    li {
+      a{
+        color:white
+      }
+    }
+
+  }
+}

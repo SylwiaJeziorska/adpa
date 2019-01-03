@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Middleware\CheckUser;
 
 
+
 class PostController extends Controller
 {
     public function __construct()
@@ -96,6 +97,10 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        Post::destroy($post->id);
+        return redirect('/post');
+
+
     }
+
 }
