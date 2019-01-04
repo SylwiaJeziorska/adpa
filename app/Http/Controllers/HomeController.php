@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -35,18 +36,28 @@ class HomeController extends Controller
         $mailjet = new \Mailjet\Client(('b4407f5d1e52e1ad89c98f8cfc1fdaf3'),('20fd1f38fe1b5cf2a1112a6fbba92a5d'));
 
         $post = Post::find($id);
-//                dd($post['content']);
 
-        // Send transactional emails (note: prefer using SwiftMailer to send transactionnal emails)
-
+        $users = User::whereNotNull('email')->get();
+        $userEmail = [];
+        foreach ($users as $user) {
+            array_push($userEmail, ['Email' => $user->email]);
+        }
+//        dd($userEmail) ;
         $body = [
             'FromEmail' => "mailjet@comite-adpa.fr",
             'FromName' => "Mailjet Pilot",
             'Subject' => "Your email flight plan!",
-            'Text-part' => $post,
-            'Html-part' => "<h3>{$post['content']}</h3><br />May the delivery force be with you!",
-            'Recipients' => [['Email' => "sylwiajeziorska@gmail.com"]]
+            'MJ-TemplateID' => 646477,
+            'MJ-TemplateLanguage' => true,
+
+            'Recipients' => $userEmail,
+            'Vars' => [
+                'content' => $post['content'],
+                'title' => $post['title'],
+
+            ],
         ];
+
 
 //dd(Resources::$Email);
         $response = $mailjet->post(Resources::$Email, ['body' => $body]);

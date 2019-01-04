@@ -25,3 +25,4 @@ Route::post('/changePassword','HomeController@changePassword')->name('changePass
 Route::post('/send/{id}','HomeController@newsLetter')->name('send');
 //Route::get('/posts', 'PostController@index');
 Route::resource('post', 'postController');
+

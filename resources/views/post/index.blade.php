@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
-        <a  href="{{route('post.create')}}" class="btn btn-warning">Ajouter de nouvelles</a>
+        <a  href="{{route('post.create')}}" class="btn btn-warning">Ajouter des nouvelles</a>
         <table class="table table-striped">
             <thead>
             <tr>
