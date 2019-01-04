@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Post;
 use Illuminate\Http\Request;
 use App\Http\Middleware\CheckUser;
-
+use Illuminate\Support\Facades\Input;
 
 
 class PostController extends Controller
@@ -87,9 +87,12 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        dd($post);
+        $post=Post::find($post->id);
 
-        Post::find($post->id)->update();
+        $post->title = $request->input('title');
+        $post->content = $request->input('content');
+
+        $post->save();
         return redirect('/post');
 
     }
