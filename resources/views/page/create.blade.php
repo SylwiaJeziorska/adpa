@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
-        <form method="post"  action="{{url('post')}}" >
+        <form method="post"  action="{{url('post')}}">
             <div class="form-group row">
                 {{csrf_field()}}
 

@@ -24,5 +24,7 @@ Route::get('/newPassword', function (){
 Route::post('/changePassword','HomeController@changePassword')->name('changePassword');
 Route::post('/send/{id}','HomeController@newsLetter')->name('send');
 //Route::get('/posts', 'PostController@index');
-Route::resource('post', 'postController');
+Route::resource('post', 'PostController');
+Route::resource('media', 'MediaController');
+Route::resource('page', 'PageController');
 
