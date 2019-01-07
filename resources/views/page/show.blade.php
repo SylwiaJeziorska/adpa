@@ -3,22 +3,23 @@
     {{--{{dd($post->title)}}--}}
 
     <div class="container">
+            {{--<div class=" row">--}}
+
+                {{--<div class="col-sm-10">--}}
+                    {{--{{$page->title}}--}}
+                {{--</div>--}}
+            {{--</div>--}}
             <div class=" row">
 
                 <div class="col-sm-10">
-                    <h2 >{{$post->title}}<h2>
-                </div>
-            </div>
-            <div class=" row">
-                <div class="col-sm-10">
-                    <p>{{$post->content}}</p>
+                    {!! $page->content !!}
                 </div>
             </div>
 
-        <a  class="btn btn-success" href=" {{route('post.edit', $post)}}">
+        <a  class="btn btn-success" href=" {{route('page.edit', $page)}}">
             Modifier
         </a>
-        <a  class="btn btn-success" href="{{ route('post.index')}}">
+        <a  class="btn btn-success" href="{{ route('page.index')}}">
             Retourner
         </a>
     </div>

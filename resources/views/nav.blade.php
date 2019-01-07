@@ -11,9 +11,38 @@
             </button>
 
             <!-- Branding Image -->
-            <a style="color:white" class="navbar-brand" href="{{ route('post.index')}}">
-                Admin
-            </a>
+            {{--<a style="color:white" class="navbar-brand" href="{{ route('post.index')}}">--}}
+                {{--Admin--}}
+            {{--</a>--}}
+            <li class="dropdown">
+                <a style="color:white" class="navbar-brand" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                    Admin  <span class="caret"></span>
+                </a>
+
+                <ul class="dropdown-menu" role="menu">
+                    <li>
+                        <a  class="navbar-brand" href="{{ route('post.index')}}">
+                            Article
+                        </a>
+
+
+                    </li>
+                    <li>
+                        <a class="navbar-brand" href="{{ route('media.index')}}">
+                            PDF
+                        </a>
+
+
+                    </li>
+                    <li>
+                        <a  class="navbar-brand" href="{{ route('page.index')}}">
+                            Page
+                        </a>
+
+
+                    </li>
+                </ul>
+            </li>
 
         </div>
 

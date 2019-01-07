@@ -11,7 +11,7 @@
             </div>
             <div class=" row">
                 <div class="col-sm-10">
-                    <p>{{$post->content}}</p>
+                    <p>{!! $post->content !!}</p>
                 </div>
             </div>
 

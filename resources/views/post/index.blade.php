@@ -14,10 +14,9 @@
             <tbody>
             @foreach($posts as $post)
                 <tr>
-
                     <td>{{$post['title']}}</td>
                     <td></td>
-                    <td>{{$post['content']}}</td>
+                    <td>{!! $post['content']!!}</td>
 
                     <td><a class="btn btn-success btn-sm" href="{{route('post.show',$post['id'])}}">Voir plus</a></td>
                     <td><form method="post" action="{{route('send', $post['id'])}}">

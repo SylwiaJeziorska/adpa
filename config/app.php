@@ -178,7 +178,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Mailjet\LaravelMailjet\MailjetServiceProvider::class,
         Mailjet\LaravelMailjet\MailjetMailServiceProvider::class,
-        Mailjet\LaravelMailjet\Providers\CampaignDraftServiceProvider::class
+        Mailjet\LaravelMailjet\Providers\CampaignDraftServiceProvider::class,
 
     ],
 

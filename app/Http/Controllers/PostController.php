@@ -45,8 +45,11 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+//        dd($request->all());
+
 
         $post = Post::create($request->all());
+//        dd($post);
 
         $post->save();
         return redirect('/post');

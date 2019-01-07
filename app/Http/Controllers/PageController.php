@@ -14,7 +14,9 @@ class PageController extends Controller
      */
     public function index()
     {
-        //
+        $pages = Page::all()->toArray();
+
+        return view('page.index', compact('pages'));
     }
 
     /**
@@ -24,7 +26,8 @@ class PageController extends Controller
      */
     public function create()
     {
-        //
+        return view('page.create');
+
     }
 
     /**
@@ -35,7 +38,10 @@ class PageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $page = Page::create($request->all());
+
+        $page->save();
+        return redirect('/page');
     }
 
     /**
@@ -46,7 +52,9 @@ class PageController extends Controller
      */
     public function show(Page $page)
     {
-        //
+
+        $page = Page::find($page->id);
+        return view('page.show',  ['page' => $page]);
     }
 
     /**
@@ -57,7 +65,8 @@ class PageController extends Controller
      */
     public function edit(Page $page)
     {
-        //
+        return view('/page.edit',['page' => $page]);
+
     }
 
     /**
@@ -69,7 +78,13 @@ class PageController extends Controller
      */
     public function update(Request $request, Page $page)
     {
-        //
+        $page=Page::find($page->id);
+
+        $page->title = $request->input('title');
+        $page->content = $request->input('content');
+
+        $page->save();
+        return redirect('/page');
     }
 
     /**
@@ -80,6 +95,7 @@ class PageController extends Controller
      */
     public function destroy(Page $page)
     {
-        //
+        Page::destroy($page->id);
+        return redirect('/page');
     }
 }
