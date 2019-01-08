@@ -6,7 +6,7 @@
             <div class=" row">
 
                 <div class="col-sm-10">
-                    <h2 >{{$post->title}}<h2>
+                    <h2 >{!! $post->title !!}<h2>
                 </div>
             </div>
             <div class=" row">
@@ -14,7 +14,14 @@
                     <p>{!! $post->content !!}</p>
                 </div>
             </div>
+        @if($post->file_name !==null)
 
+        <div class=" row">
+            <div class="col-sm-10">
+                <img src="{{ URL::to('/') }}/img/{{$post->file_name}} ">
+            </div>
+        </div>
+        @endif
         <a  class="btn btn-success" href=" {{route('post.edit', $post)}}">
             Modifier
         </a>

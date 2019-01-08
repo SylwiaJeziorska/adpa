@@ -43,7 +43,7 @@ class MediaController extends Controller
         $this->validate($request, ['image.*' => 'mimes:pdf|max:2048']);
 
         $image = $request->file('image');
-            $destinationPath = 'img';
+            $destinationPath = 'pdf';
             $file_name = time() . '-' . $image->getClientOriginalName();
             $image->move($destinationPath, $file_name);
             $img = new Media;
@@ -67,7 +67,7 @@ class MediaController extends Controller
     {
         $themedia = Media::find($media);
 
-        $pathToFile = public_path("img/" .$themedia->file_name);
+        $pathToFile = public_path("pdf/" .$themedia->file_name);
         return response()->download($pathToFile);
 //        $themedia = Media::find($media);
 //

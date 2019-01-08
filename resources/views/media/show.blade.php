@@ -5,7 +5,7 @@
     <div class="container">
             <div class="row">
 
-                <h2 >{{$pdf->title}}<h2>
+                <h2 >{{$pdf->title}}</h2>
             </div>
 
 

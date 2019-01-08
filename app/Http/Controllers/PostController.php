@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Post;
 use Illuminate\Http\Request;
 use App\Http\Middleware\CheckUser;
-use Illuminate\Support\Facades\Input;
 
 
 class PostController extends Controller
@@ -45,12 +44,22 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-//        dd($request->all());
 
+        $post = new Post;
+        if ($request->file('image')) {
+            $this->validate($request, ['image.*' => 'mimes:pdf|max:2048']);
 
-        $post = Post::create($request->all());
-//        dd($post);
+            $image = $request->file('image');
+            $destinationPath = 'img';
+            $file_name = time() . '-' . $image->getClientOriginalName();
+            $image->move($destinationPath, $file_name);
 
+            $post->original_name = $image->getClientOriginalName();
+            $post->file_name = $file_name;
+
+        }
+        $post->title =  $request->input('title');
+        $post->content = $request->input('content');
         $post->save();
         return redirect('/post');
     }
@@ -90,9 +99,25 @@ class PostController extends Controller
     public function update(Request $request, Post $post)
     {
         $post=Post::find($post->id);
+        if ($request->delete==1){
+            $post->original_name = null;
+            $post->file_name = null;
+        }
+        if ($request->file('image')) {
+            $this->validate($request, ['image.*' => 'mimes:jpeg,jpg,png|max:2048']);
 
+            $image = $request->file('image');
+            $destinationPath = 'img';
+            $file_name = time() . '-' . $image->getClientOriginalName();
+            $image->move($destinationPath, $file_name);
+
+            $post->original_name = $image->getClientOriginalName();
+            $post->file_name = $file_name;
+
+        }
         $post->title = $request->input('title');
         $post->content = $request->input('content');
+
 
         $post->save();
         return redirect('/post');
@@ -112,5 +137,6 @@ class PostController extends Controller
 
 
     }
+
 
 }

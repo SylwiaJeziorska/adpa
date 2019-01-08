@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\media;
 use App\Page;
+use App\Post;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -39,7 +41,6 @@ class PageController extends Controller
     public function store(Request $request)
     {
         $page = Page::create($request->all());
-
         $page->save();
         return redirect('/page');
     }
@@ -52,9 +53,23 @@ class PageController extends Controller
      */
     public function show(Page $page)
     {
-
+        $post= Post::orderBy('id','desc')->first();
         $page = Page::find($page->id);
-        return view('page.show',  ['page' => $page]);
+
+        $medias = Media::All();
+
+        if ($page->modelId==1){
+            return view('page.show',  ['page' => $page, 'post'=>$post]);
+
+        }elseif ($page->modelId==2){
+
+            return view('page.show',  ['page' => $page, 'medias'=>$medias]);
+
+        }else{
+            return view('page.show',  ['page' => $page]);
+
+        }
+
     }
 
     /**
@@ -82,7 +97,7 @@ class PageController extends Controller
 
         $page->title = $request->input('title');
         $page->content = $request->input('content');
-
+        $page->modelId = $request->input('model');
         $page->save();
         return redirect('/page');
     }

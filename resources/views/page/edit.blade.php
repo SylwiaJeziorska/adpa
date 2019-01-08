@@ -26,6 +26,24 @@
                 </div>
             </div>
             <div class="form-group row">
+                <div class="form-group row">
+
+
+                    <p class="col-sm-2 col-form-label col-form-label-sm" >Model</p>
+
+                    <div class="col-sm-10">
+                        <input type="radio" id="huey" name="model" value="0">
+                        <label for="huey" style="margin-right: 20px;">Aucun</label>
+                        <input type="radio" id="dewey" name="model" value="1">
+                        <label for="dewey" style="margin-right: 20px;">Flash info</label>
+                        <input type="radio" id="louie" name="model" value="2">
+                        <label for="louie" style="margin-right: 20px;">Pdf</label>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="form-group row">
                 <div class="col-md-2"></div>
                 <input type="submit" class="btn btn-primary" value="Save"/>
 

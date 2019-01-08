@@ -1,9 +1,16 @@
 @include('head')
 
 <div class="container" id="login-blade" >
+    <div class="row">
+        <div class="col-md-2 col-md-offset-5 logo" id="logo">
+            <img  height="100px"src="{{ URL::to('/') }}/img/logo1.svg">
+
+        </div>
+
+    </div>
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
-                <div class="panel panel-default">
+                <div class="panel panel-default login">
 
                     <div class="panel-body">
                         <form method="POST" action="{{ route('login') }}">
@@ -42,7 +49,7 @@
                                         <label>
                                             <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Se souvenir de moi
                                         </label>
-                                        <button style="float: right" type="submit" class="btn btn-primary">
+                                        <button style="float: right" type="submit" class="btn btn-warning">
                                             Se connecter
                                         </button>
                                     </div>

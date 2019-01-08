@@ -1,6 +1,8 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
+        <td><a class="btn btn-success btn-sm" href="{{route('media.create')}}">Add new</a></td>
+
         <table class="table table-striped">
             <thead>
             <tr>

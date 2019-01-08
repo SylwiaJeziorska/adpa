@@ -4,8 +4,8 @@
         <form action="{{url('media')}}" method="POST" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="form-group">
-                <label for="exampleInputEmail1">Title</label>
-                <input type="text" class="form-control" placeholder="Title" name="title">
+                <label for="exampleInputEmail1">Titre</label>
+                <input type="text" class="form-control" placeholder="Titre" name="title">
 
             </div>
             <div class="form-group">
