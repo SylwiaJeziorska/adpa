@@ -16,10 +16,10 @@
             <div class="panel panel-default">
 
                 <div class="panel-heading" id="loginHeader">
-                    @if(Auth::user()->email==null){
+                    @if(Auth::user()->email==null)
                     <p>Veuillez choisir un nouveau mot de passe et compléter votre compte </p>
 
-                    }
+
                     @endif
                     <h1>Mon compte</h1><br/>
                 </div>
@@ -92,7 +92,7 @@
                             {{--<label for="new-password" class="col-md-4 control-label">Nouveau mot de passe</label>--}}
 
                             <div class="col-md-12">
-                                <input id="new-password" placeholder="Nouveau mot de passe *" type="password" class="form-control" name="new-password" >
+                                <input id="new-password" placeholder="Nouveau mot de passe *" type="password" class="form-control" name="newPassword" >
 
                                 @if ($errors->has('new-password'))
                                     <span class="help-block">
