@@ -1,49 +1,207 @@
-
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
-
 // Variables
 @import "variables";
-
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
-#login-blade{
+
+#app {
+  padding-bottom: 50px;
+}
+
+#login-blade {
   background-image: url('http://127.0.0.1:8000/img/bcg.jpg');
   background-position: center;
   height: 100vh;
   width: 100%;
   background-repeat: no-repeat;
-  #logo{
+
+  #logo {
     margin-top: 50px;
     margin-bottom: 50px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     justify-items: center;
-  }
-}
-#logo{
-  margin-top: 50px;
-  margin-bottom: 50px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  justify-items: center;
-}
-.login{
-  with:400px;
-}
-#app-navbar-collapse{
-  background: #847F80;
-  color:white
-}
-.navbar-default {
-  .navbar-nav {
-    li {
-      a{
-        color:white
+
+    h3 {
+      margin: auto;
+      font-size: 16px;
+      line-height: 1.2;
+
+      span {
+        font-size: 13px;
       }
     }
 
+    h2 {
+      margin: auto;
+      justify-self: center;
+    }
+  }
+
+  #loginForm {
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+
+    label {
+      font-weight: 500;
+    }
+
+  }
+
+
+  .formPadding {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  .lastGroup {
+    height: 80px;
+  }
+
+  #formFooter {
+    background: #847F80;
+    height: 70px;
+    margin-bottom: -20px;
+    color: white;
+    padding: 5px;
+
+    a {
+      color: white;
+      padding-bottom: 0;
+    }
+  }
+
+  .login {
+    with: 400px;
+    margin-bottom: 0;
+    border: none;
+  }
+}
+
+.panel {
+  #loginHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    h1 {
+      font-size: 14px;
+      margin-top: 0;
+    }
+
+    p {
+      width: 50%;
+      font-size: 11px;
+
+
+    }
+  }
+}
+
+.changePsw {
+  .logo {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+
+
+#lastPost {
+  padding: 10px;
+  background: #B4D5E9;
+}
+
+#app-navbar-collapse {
+  background: #847F80;
+  color: white
+}
+#navBG{
+  background: #847F80;
+}
+.pageTitle{
+  padding-left: 15px;
+  margin-bottom: 45px;
+}
+.navBlade {
+
+  .logo {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+
+    h2 {
+      margin-left: 50px;
+    }
+
+    h3 {
+      font-size: 18px;
+      margin-top: 0;
+
+      span {
+        font-size: 14px;
+      }
+    }
+
+  }
+}
+
+.navbar-default {
+  .navbar-nav {
+    li {
+      a {
+        color: white
+      }
+    }
+
+  }
+}
+
+//pdf
+.pdfWrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.pdf {
+  margin: 5px;
+}
+//page show
+#pageContent {
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+}
+.lastNews{
+  p{
+    padding: 15px;
+  }
+  h3{
+    padding-bottom: 15px;
+    margin-top: 0;
+  }
+}
+//footer
+footer {
+  background: #C2CBAD;
+  padding-top: 30px;
+  color: black;
+  position: rel;
+  bottom: 0;
+  width: 100%;
+  line-height: 1.2;
+
+  span {
+    color: #E3799F;
+  }
+
+  .legales {
+    background: #847F80;
   }
 }

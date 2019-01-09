@@ -35,7 +35,7 @@ class LoginController extends Controller
             return redirect()->route('newPassword');
         }
 
-        return redirect('/home');
+        return redirect('/page/6');
     }
     /**
      * Create a new controller instance.

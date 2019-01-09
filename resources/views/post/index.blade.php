@@ -1,30 +1,38 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
-        <a  href="{{route('post.create')}}" class="btn btn-warning">Ajouter des nouvelles</a>
+        <a  href="{{route('post.create')}}" class="btn btn-warning">Ajouter un actualité</a>
         <table class="table table-striped">
             <thead>
             <tr>
+                <th>Date</th>
                 <th>Titre</th>
-                <th>Sous-titre</th>
 
                 <th>Contenu</th>
+                <th></th>
+                <th></th>
+
             </tr>
             </thead>
             <tbody>
             @foreach($posts as $post)
                 <tr>
+                    <td>{{($post['created_at'])}}</td>
                     <td>{{$post['title']}}</td>
-                    <td></td>
-                    <td>{!! $post['content']!!}</td>
+                    <td>{!! str_limit($post['content'], 200,'...')!!}</td>
 
-                    <td><a class="btn btn-success btn-sm" href="{{route('post.show',$post['id'])}}">Voir plus</a></td>
-                    <td><form method="post" action="{{route('send', $post['id'])}}">
+                    <td><a class="btn btn-default btn-sm" href="{{route('post.show',$post['id'])}}">Voir plus</a></td>
+                    <td>
+                        <form method="post" action="{{route('send', $post['id'])}}">
                             {{csrf_field()}}
 
-                            <input type="submit" class="btn btn-primary btn-sm">
+                            <input type="submit" class="btn btn-default btn-sm">
 
-                        </form></td>
+                        </form>
+                    </td>
+                    <td>   <a  class="btn btn-default btn-sm" href=" {{route('post.edit', $post)}}">
+                            Modifier
+                        </a></td>
                     <td>
 
                         <form onsubmit="return confirm('Are you sure you want to delete?')"

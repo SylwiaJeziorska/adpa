@@ -2,22 +2,27 @@
 @section('content')
     <div class="container">
         <a  href="{{route('page.create')}}" class="btn btn-warning">Ajouter un page</a>
-        <table class="table table-striped">
+        <table class="table ">
             <thead>
             <tr>
+                <th>Date</th>
                 <th>Titre</th>
-                <th>Sous-titre</th>
 
                 <th>Contenu</th>
+                <th></th>
+                <th></th>
             </tr>
             </thead>
             <tbody>
             @foreach($pages as $post)
                 <tr>
+                    <td>{!! $post['created_at']!!}</td>
 
-                    <td>{!! $post['content'] !!}</td>
+                    <td>{!! $post['title']!!}</td>
+                    <td>{!! str_limit($post['content'], 200,'...')!!}</td>
 
-                    <td><a class="btn btn-success btn-sm" href="{{route('page.show',$post['id'])}}">Voir plus</a></td>
+
+                    <td><a class="btn btn-default btn-sm" href="{{route('page.show',$post['id'])}}">Voir plus</a></td>
 
                     <td>
 

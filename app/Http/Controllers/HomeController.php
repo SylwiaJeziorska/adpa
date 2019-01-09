@@ -70,37 +70,47 @@ class HomeController extends Controller
     public function changePassword(Request $request){
 //
 //        dd($request);
-        if (!(Hash::check($request->get('current-password'), Auth::user()->password))) {
-            // The passwords matches
-            return redirect()->back()->with("error","Your current password does not matches with the password you provided. Please try again.");
-        }
+        $user = Auth::user();
 
-        if(strcmp($request->get('current-password'), $request->get('new-password')) == 0){
-            //Current password and new password are same
-            return redirect()->back()->with("error","New Password cannot be same as your current password. Please choose a different password.");
-        }
+        if ($request->email ==null){
+            if (!(Hash::check($request->get('current-password'), Auth::user()->password))) {
+                // The passwords matches
+                return redirect()->back()->with("error","Your current password does not matches with the password you provided. Please try again.");
+            }
 
-
-        $validatedData =$this->validate($request, [
-            'current-password' => 'required',
-            'new-password' => 'required|string|min:6|confirmed',
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
+            if(strcmp($request->get('current-password'), $request->get('new-password')) == 0){
+                //Current password and new password are same
+                return redirect()->back()->with("error","New Password cannot be same as your current password. Please choose a different password.");
+            }
+            $validatedData =$this->validate($request, [
+                'current-password' => 'required',
+                'new-password' => 'required|string|min:6|confirmed',
+                'name' => 'required|string|max:255',
+                'email' => 'required|string|email|max:255|unique:users',
             ]);
+            $user->password = bcrypt($request->get('new-password'));
+            $user->password_change_at =Carbon::now();
+
+        }
+
+
+
 
         //Change Password
-        $user = Auth::user();
-        $user->password = bcrypt($request->get('new-password'));
-        $user->password_change_at =Carbon::now();
+
         $user->email =$request['email'];
         $user->name =$request['name'];
+        $user->address =$request['address'];
+        $user->prenom =$request['prenom'];
+        $user->tel =$request['tel'];
 
         $user->save();
 
-        return view('home');
+        return redirect('/page/6');
 
     }
     public function userdata(){
+        dd('homeControler');
         $file = public_path('file/data.csv');
 
         if (!file_exists($file) || !is_readable($file)) {

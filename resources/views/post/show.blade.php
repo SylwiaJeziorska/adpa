@@ -22,11 +22,9 @@
             </div>
         </div>
         @endif
-        <a  class="btn btn-success" href=" {{route('post.edit', $post)}}">
-            Modifier
-        </a>
-        <a  class="btn btn-success" href="{{ route('post.index')}}">
-            Retourner
-        </a>
+
+        {{--<a  class="btn btn-success" href="{{ route('post.index')}}">--}}
+            {{--Retourner--}}
+        {{--</a>--}}
     </div>
 @endsection

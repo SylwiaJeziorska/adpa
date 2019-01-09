@@ -32,11 +32,11 @@
                     <p class="col-sm-2 col-form-label col-form-label-sm" >Model</p>
 
                     <div class="col-sm-10">
-                        <input type="radio" id="huey" name="model" value="0">
-                        <label for="huey" style="margin-right: 20px;">Aucun</label>
-                        <input type="radio" id="dewey" name="model" value="1">
+                        <input type="radio" name="model" value="0" <?php echo($page->modelId == 0 ? "checked='checked'" : ""); ?>>
+                        <label for="huey" style="margin-right: 20px;" >Aucun</label>
+                        <input type="radio" name="model" value="1" <?php echo($page->modelId == 1? "checked='checked'" : ""); ?>>
                         <label for="dewey" style="margin-right: 20px;">Flash info</label>
-                        <input type="radio" id="louie" name="model" value="2">
+                        <input type="radio"  name="model" value="2"  <?php echo($page->modelId == 2 ? "checked='checked'" : ""); ?>>
                         <label for="louie" style="margin-right: 20px;">Pdf</label>
                     </div>
 

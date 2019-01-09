@@ -21,6 +21,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/newPassword', function (){
     return view('auth/passwords/changepassword');
 })->name('newPassword');
+Route::get('/mon-Compte',function (){
+    return view('auth/passwords/changepassword');
+
+})->name('monCompte');
+
 Route::post('/changePassword','HomeController@changePassword')->name('changePassword');
 Route::post('/send/{id}','HomeController@newsLetter')->name('send');
 //Route::get('/posts', 'PostController@index');

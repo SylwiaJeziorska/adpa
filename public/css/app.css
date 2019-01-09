@@ -8333,6 +8333,10 @@ button.close {
   }
 }
 
+#app {
+  padding-bottom: 50px;
+}
+
 #login-blade {
   background-image: url("http://127.0.0.1:8000/img/bcg.jpg");
   background-position: center;
@@ -8347,19 +8351,70 @@ button.close {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   justify-items: center;
 }
 
-#logo {
-  margin-top: 50px;
-  margin-bottom: 50px;
+#login-blade #logo h3 {
+  margin: auto;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+#login-blade #logo h3 span {
+  font-size: 13px;
+}
+
+#login-blade #logo h2 {
+  margin: auto;
+  justify-self: center;
+}
+
+#login-blade #loginForm {
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+}
+
+#login-blade #loginForm label {
+  font-weight: 500;
+}
+
+#login-blade .formPadding {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+#login-blade .lastGroup {
+  height: 80px;
+}
+
+#login-blade #formFooter {
+  background: #847F80;
+  height: 70px;
+  margin-bottom: -20px;
+  color: white;
+  padding: 5px;
+}
+
+#login-blade #formFooter a {
+  color: white;
+  padding-bottom: 0;
+}
+
+#login-blade .login {
+  with: 400px;
+  margin-bottom: 0;
+  border: none;
+}
+
+.panel #loginHeader {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8367,14 +8422,34 @@ button.close {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  justify-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.login {
-  with: 400px;
+.panel #loginHeader h1 {
+  font-size: 14px;
+  margin-top: 0;
+}
+
+.panel #loginHeader p {
+  width: 50%;
+  font-size: 11px;
+}
+
+.changePsw .logo {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#lastPost {
+  padding: 10px;
+  background: #B4D5E9;
 }
 
 #app-navbar-collapse {
@@ -8382,7 +8457,88 @@ button.close {
   color: white;
 }
 
+#navBG {
+  background: #847F80;
+}
+
+.pageTitle {
+  padding-left: 15px;
+  margin-bottom: 45px;
+}
+
+.navBlade .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 20px;
+}
+
+.navBlade .logo h2 {
+  margin-left: 50px;
+}
+
+.navBlade .logo h3 {
+  font-size: 18px;
+  margin-top: 0;
+}
+
+.navBlade .logo h3 span {
+  font-size: 14px;
+}
+
 .navbar-default .navbar-nav li a {
   color: white;
+}
+
+.pdfWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.pdf {
+  margin: 5px;
+}
+
+#pageContent {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.lastNews p {
+  padding: 15px;
+}
+
+.lastNews h3 {
+  padding-bottom: 15px;
+  margin-top: 0;
+}
+
+footer {
+  background: #C2CBAD;
+  padding-top: 30px;
+  color: black;
+  position: rel;
+  bottom: 0;
+  width: 100%;
+  line-height: 1.2;
+}
+
+footer span {
+  color: #E3799F;
+}
+
+footer .legales {
+  background: #847F80;
 }
 

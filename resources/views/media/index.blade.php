@@ -1,11 +1,12 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
-        <td><a class="btn btn-success btn-sm" href="{{route('media.create')}}">Add new</a></td>
+        <td><a class="btn btn-success btn-sm" href="{{route('media.create')}}">Ajouter un nouveau PDF</a></td>
 
         <table class="table table-striped">
             <thead>
             <tr>
+                <th>Date</th>
                 <th>Titre</th>
                 <th>Url</th>
                 <th></th>
@@ -16,11 +17,11 @@
             <tbody>
             @foreach($medias as $media)
                 <tr>
+                    <td>{{$media['created_at']}}</td>
                     <td>{{$media['title']}}</td>
                     <td>{{public_path("img/" .$media['file_name'])}}</td>
 
-                    <td><a class="btn btn-success btn-sm" href="{{route('media.show',$media['id'])}}">Download</a></td>
-                    <td><a class="btn btn-success btn-sm" href="{{route('media.edit',$media['id'])}}">Modifier</a></td>
+                    <td><a class="btn btn-success btn-sm" href="{{route('media.show',$media['id'])}}">Télécharger</a></td>
 
                     <td>
 

@@ -1,12 +1,21 @@
-<div class="row">
-    <div class="col-md-2 col-md-offset-1 logo" id="logo">
-        <img  height="100px"src="{{ URL::to('/') }}/img/logo.png">
+<div class=" container navBlade">
+    <div class="row">
+        <div class=" logo" id="logo">
+            <div>
+                <img  height="100px"src="{{ URL::to('/') }}/img/logo1.svg">
+                {{--<h3> Acompanier à domicile <br/><span>pour préserver l'autonomie</span></h3>--}}
 
+            </div>
+            <h2>CE ADPA 38</h2>
+
+        </div>
     </div>
+
+
 
 </div>
 <nav class="navbar navbar-default navbar-static-top">
-    <div class="container">
+    <div class="container " id="navBG">
         <div class="navbar-header">
 
             <!-- Collapsed Hamburger -->
@@ -29,7 +38,7 @@
                 <ul class="dropdown-menu" role="menu">
                     <li>
                         <a  class="navbar-brand" href="{{ route('post.index')}}">
-                            Article
+                            Flesh info
                         </a>
 
 
@@ -56,12 +65,15 @@
         <div class="collapse navbar-collapse" id="app-navbar-collapse" >
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
-                <li><a href={{ url('page/6') }}> Le comité</a></li>
-                <li><a href={{ url('page/17') }}> Prestations </a></li>
-                <li><a href={{ url('page/6') }}> Billeterie </a></li>
-                <li><a href={{ url('page/6') }}> Réductions </a></li>
-                <li><a href={{ url('page/6') }}> Les dates clés </a></li>
-                <li><a href={{ url('page/6') }}> Contact </a></li>
+                <li><a href={{ url('page/6') }}> Accueil</a></li>
+                <li><a href={{ url('page/17') }}> Le comité</a></li>
+                <li><a href={{ url('') }}> Prestations </a></li>
+                <li><a href={{ url('') }}> Billeterie </a></li>
+                <li><a href={{ url('') }}> Réductions </a></li>
+                <li><a href={{ url('') }}> Les dates clés </a></li>
+                <li><a href={{ url('') }}> Contact </a></li>
+
+
             </ul>
 
             <!-- Right Side Of Navbar -->
@@ -71,6 +83,8 @@
                     <li><a href="{{ route('login') }}">Login</a></li>
                     <li><a href="{{ route('register') }}">Register</a></li>
                 @else
+                    <li><a href="{{ route('monCompte') }}">Mon compte</a></li>
+
                     <li class="dropdown" style="background: #847F80;">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             {{ Auth::user()->name }} <span class="caret"></span>
@@ -81,7 +95,7 @@
                                 <a style="color:#847F80;" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                    Logout
+                                    Se déconnecter
                                 </a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
