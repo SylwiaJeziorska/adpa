@@ -3,14 +3,19 @@
 @section('content')
     <div class="container">
         <div class="row contact">
+            @if(session('message'))
+                <div class='alert alert-success'>
+                    {{ session('message') }}
+                </div>
+            @endif
 
-            <form class="form-horizontal col-md-6 col-md-offset-2 " method="POST" action="{{ route('contact') }}">
+            <form class="form-horizontal col-md-6 col-md-offset-2 " method="POST" action="{{('/contact') }}">
                 {{ csrf_field() }}
 
                 <div class="form-group{{ $errors->has('nome') ? ' has-error' : '' }}">
 
                     <div class="col-md-11 col-md-offset-1">
-                        <input id="name" type="email" class="form-control" placeholder="Nome" name="name"
+                        <input id="name" type="text" class="form-control" placeholder="Nome" name="name"
                                value="{{ old('name') }}" required>
 
                         @if ($errors->has('name'))

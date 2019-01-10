@@ -33,7 +33,5 @@ Route::resource('post', 'PostController');
 Route::resource('media', 'MediaController');
 Route::resource('page', 'PageController');
 
-Route::get('/contact',function (){
-    return view('contact');
-
-})->name('contact');
+Route::get('/contact', 'ContactController@show')->name('contact');
+Route::post('/contact',  'ContactController@mailToAdmin');
