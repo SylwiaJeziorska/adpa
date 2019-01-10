@@ -92,7 +92,7 @@
                             {{--<label for="new-password" class="col-md-4 control-label">Nouveau mot de passe</label>--}}
 
                             <div class="col-md-12">
-                                <input id="new-password" placeholder="Nouveau mot de passe *" type="password" class="form-control" name="newPassword" >
+                                <input id="new-password" placeholder="Nouveau mot de passe *" type="password" class="form-control" name="new-password" >
 
                                 @if ($errors->has('new-password'))
                                     <span class="help-block">
@@ -150,3 +150,6 @@
         </div>
     </div>
 </div>
+<script>
+
+</script>

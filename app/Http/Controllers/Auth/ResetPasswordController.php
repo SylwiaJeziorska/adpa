@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\ResetsPasswords;
 
 class ResetPasswordController extends Controller
 {
+
     /*
     |--------------------------------------------------------------------------
     | Password Reset Controller
@@ -36,4 +37,5 @@ class ResetPasswordController extends Controller
     {
         $this->middleware('guest');
     }
+
 }

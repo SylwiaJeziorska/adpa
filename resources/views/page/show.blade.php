@@ -56,9 +56,9 @@
         </div>
 
 
-        <a  class="btn btn-default" href=" {{route('page.edit', $page)}}">
-        Modifier
-        </a>
+        {{--<a  class="btn btn-default" href=" {{route('page.edit', $page)}}">--}}
+        {{--Modifier--}}
+        {{--</a>--}}
         {{--<a  class="btn btn-success" href="{{ route('page.index')}}">--}}
         {{--Retourner--}}
         {{--</a>--}}

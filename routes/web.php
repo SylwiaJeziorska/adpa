@@ -33,3 +33,7 @@ Route::resource('post', 'PostController');
 Route::resource('media', 'MediaController');
 Route::resource('page', 'PageController');
 
+Route::get('/contact',function (){
+    return view('contact');
+
+})->name('contact');

@@ -62,52 +62,60 @@ class HomeController extends Controller
 //dd(Resources::$Email);
         $response = $mailjet->post(Resources::$Email, ['body' => $body]);
 //        $response->success() && var_dump($response->getData());
-                if ($response->success())
-           echo 'succes';
+        if ($response->success())
+            echo 'succes';
         else
             var_dump($response->getStatus());
     }
     public function changePassword(Request $request){
-//
         $user = Auth::user();
+         $request->get('new-password');
+         if ($request->get('new-password') == null || $request->get('email')==null ){
 
-        if ($request->newPassword !==null || $request->email==null ){
-            if (!(Hash::check($request->get('current-password'), Auth::user()->password))) {
-                // The passwords matches
-                return redirect()->back()->with("error","Your current password does not matches with the password you provided. Please try again.");
-            }
+             if (!(Hash::check($request->get('current-password'), Auth::user()->password))) {
+                 // The passwords matches
+                 return redirect()->back()->with("error","Votre mot de passe actuel ne correspond pas au mot de passe que vous avez fourni. Veuillez réessayer.");
+             }
 
-            if(strcmp($request->get('current-password'), $request->get('new-password')) == 0){
-                //Current password and new password are same
-                return redirect()->back()->with("error","New Password cannot be same as your current password. Please choose a different password.");
-            }
-            $this->validate($request, [
-                'current-password' => 'required',
-                'newPassword' => 'required|string|min:6|confirmed',
-                'name' => 'required|string|max:255',
-                'email' => 'required|string|email|max:255|unique:users',
-            ]);
-            $user->password = bcrypt($request->get('new-password'));
-            $user->password_change_at =Carbon::now();
-
-        }
+             if(strcmp($request->get('current-password'), $request->get('Â')) == 0){
+                 //Current password and new password are same
+                 return redirect()->back()->with("error","Nouveau mot de passe ne peut pas être identique à votre mot de passe actuel. Veuillez choisir un mot de passe différent.");
+             }
 
 
+             $this->validate($request, [
+                 'current-password' => 'required',
+                 'new-password' => 'required|string|min:6|confirmed',
+                 'name' => 'required|string|max:255',
+                 'prenom' => 'required|string|max:255',
+                 'email' => 'required|string|email|max:255',
+             ]);
+             if ($request->get('email')==null ){
+                 $this->validate($request, [
 
-
-        //Change Password
-
+                     'email' => 'required|string|email|max:255|unique:users',
+                 ]);
+             }
+             $user->password = bcrypt($request->get('new-password'));
+             $user->password_change_at =Carbon::now();
+         }
         $user->email =$request['email'];
         $user->name =$request['name'];
         $user->address =$request['address'];
         $user->prenom =$request['prenom'];
         $user->tel =$request['tel'];
 
+
+        //Change Password
+
         $user->save();
 
-        return redirect('/page/6');
+//        return redirect()->back()->with("success","Password changed successfully !");
 
+        return redirect('/page/6');
     }
+
+
     public function userdata(){
         dd('homeControler');
         $file = public_path('file/data.csv');

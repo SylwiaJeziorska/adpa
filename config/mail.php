@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'driver' => env('MAIL_DRIVER', 'mailjet'),
+    'driver' => env('MAIL_DRIVER', 'smtp'),
 
     /*
     |--------------------------------------------------------------------------
@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
+    'host' => env('MAIL_HOST', ' in-v3.mailjet.com '),
 
     /*
     |--------------------------------------------------------------------------
@@ -56,7 +56,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'mailjet@zedd.fr'),
+        'address' => env('MAIL_FROM_ADDRESS', 'test@comite-adpa.fr'),
         'name' => env('MAIL_FROM_NAME', 'Example'),
     ],
 
@@ -84,9 +84,9 @@ return [
     |
     */
 
-    'username' => env('MAIL_USERNAME'),
+    'username' => env(' b4407f5d1e52e1ad89c98f8cfc1fdaf3 '),
 
-    'password' => env('MAIL_PASSWORD'),
+    'password' => env(' 20fd1f38fe1b5cf2a1112a6fbba92a5d '),
 
     /*
     |--------------------------------------------------------------------------

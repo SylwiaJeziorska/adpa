@@ -67,11 +67,11 @@
             <ul class="nav navbar-nav">
                 <li><a href={{ url('page/6') }}> Accueil</a></li>
                 <li><a href={{ url('page/17') }}> Le comité</a></li>
-                <li><a href={{ url('') }}> Prestations </a></li>
-                <li><a href={{ url('') }}> Billeterie </a></li>
-                <li><a href={{ url('') }}> Réductions </a></li>
-                <li><a href={{ url('') }}> Les dates clés </a></li>
-                <li><a href={{ url('') }}> Contact </a></li>
+                <li><a href={{ url('page/6') }}> Prestations </a></li>
+                <li><a href={{ url('page/6') }}> Billeterie </a></li>
+                <li><a href={{ url('page/6') }}> Réductions </a></li>
+                <li><a href={{ url('page/6') }}> Les dates clés </a></li>
+                <li><a href={{ url('contact') }}> Contact </a></li>
 
 
             </ul>
@@ -109,3 +109,16 @@
         </div>
     </div>
 </nav>
+<script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+<script>
+    $( document ).ready(function() {
+        $( ".dropdown" ).click(function() {
+            $(this).children('.dropdown-menu').toggle();
+
+        });
+    });
+
+</script>
