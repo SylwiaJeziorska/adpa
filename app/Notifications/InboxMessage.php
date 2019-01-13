@@ -3,15 +3,13 @@ namespace App\Notifications;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use App\Http\Requests\ContactFormRequest;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 class InboxMessage extends Notification
 {
     use Queueable;
-    protected $message;
+    private $message;
     public function __construct(contactFormRequest $message)
     {
-        dd($message);
         $this->message = $message;
     }
     /**
@@ -33,11 +31,12 @@ class InboxMessage extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
+            ->error()
             ->subject(config('admin.name') . ", you got a new message!")
-            ->greeting(" ")
-            ->salutation(" ")
             ->from($this->message->email, $this->message->name)
             ->line($this->message->message);
+        dd(MailMessage);
+
     }
     /**
      * Get the array representation of the notification.

@@ -12,7 +12,7 @@ class Admin extends Model
     protected $email;
 
     public function __construct() {
-        $this->admin = config('admin.name');
-        $this->email = config('admin.email');
+        $this->admin = config('sylwia');
+        $this->email = config('sylwiajeziorska@gmail.com');
     }
 }
