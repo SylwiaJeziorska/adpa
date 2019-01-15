@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST'),
+    'host' => env('MAIL_HOST',' in-v3.mailjet.com ' ),
 
     /*
     |--------------------------------------------------------------------------
@@ -42,7 +42,7 @@ return [
     |
     */
 
-    'port' => env('MAIL_PORT', 587),
+    'port' => env('MAIL_PORT', 465),
 
     /*
     |--------------------------------------------------------------------------
@@ -56,7 +56,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'test@comite-adpa.fr'),
+        'address' => env('MAIL_FROM_ADDRESS', 'mailjet@comite-adpa.fr'),
         'name' => env('MAIL_FROM_NAME', 'Example'),
     ],
 
@@ -71,7 +71,7 @@ return [
     |
     */
 
-    'encryption' => env('MAIL_ENCRYPTION', 'tls'),
+    'encryption' => env('MAIL_ENCRYPTION', 'ssl'),
 
     /*
     |--------------------------------------------------------------------------

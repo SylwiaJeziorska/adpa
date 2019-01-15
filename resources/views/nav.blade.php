@@ -30,6 +30,7 @@
             {{--<a style="color:white" class="navbar-brand" href="{{ route('post.index')}}">--}}
                 {{--Admin--}}
             {{--</a>--}}
+            @if(Auth::user()->role)
             <li class="dropdown">
                 <a style="color:white; margin: 0" class="navbar-brand" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                     Admin  <span class="caret"></span>
@@ -59,7 +60,7 @@
                     </li>
                 </ul>
             </li>
-
+        @endif
         </div>
 
         <div class="collapse navbar-collapse" id="app-navbar-collapse" >

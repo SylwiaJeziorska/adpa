@@ -35,7 +35,7 @@ class InboxMessage extends Notification
             ->subject(config('admin.name') . ", you got a new message!")
             ->from($this->message->email, $this->message->name)
             ->line($this->message->message);
-        dd(MailMessage);
+//        dd(MailMessage);
 
     }
     /**

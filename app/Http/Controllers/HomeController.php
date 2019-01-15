@@ -70,7 +70,7 @@ class HomeController extends Controller
     public function changePassword(Request $request){
         $user = Auth::user();
          $request->get('new-password');
-         if ($request->get('new-password') == null || $request->get('email')==null ){
+         if ($request->get('new-password') !== null || $request->get('email')==null ){
 
              if (!(Hash::check($request->get('current-password'), Auth::user()->password))) {
                  // The passwords matches
