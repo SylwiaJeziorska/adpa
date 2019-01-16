@@ -71,6 +71,7 @@ class HomeController extends Controller
         $user = Auth::user();
          $request->get('new-password');
          if ($request->get('new-password') !== null || $request->get('email')==null ){
+
              if (!(Hash::check($request->get('current-password'), Auth::user()->password))) {
                  // The passwords matches
                  return redirect()->back()->with("error","Votre mot de passe actuel ne correspond pas au mot de passe que vous avez fourni. Veuillez réessayer.");
