@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
-        {{--<a  href="{{route('page.create')}}" class="btn btn-warning">Ajouter un page</a>--}}
+        <a  href="{{route('page.create')}}" class="btn btn-warning">Ajouter un page</a>
         <table class="table ">
             <thead>
             <tr>

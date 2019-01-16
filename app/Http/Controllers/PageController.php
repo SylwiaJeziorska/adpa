@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Middleware\CheckUser;
 use App\media;
 use App\Page;
 use App\Post;
@@ -9,6 +10,10 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(CheckUser::class);
+    }
     /**
      * Display a listing of the resource.
      *

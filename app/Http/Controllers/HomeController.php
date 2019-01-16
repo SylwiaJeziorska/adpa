@@ -71,7 +71,6 @@ class HomeController extends Controller
         $user = Auth::user();
          $request->get('new-password');
          if ($request->get('new-password') !== null || $request->get('email')==null ){
-
              if (!(Hash::check($request->get('current-password'), Auth::user()->password))) {
                  // The passwords matches
                  return redirect()->back()->with("error","Votre mot de passe actuel ne correspond pas au mot de passe que vous avez fourni. Veuillez réessayer.");
@@ -96,8 +95,10 @@ class HomeController extends Controller
                      'email' => 'required|string|email|max:255|unique:users',
                  ]);
              }
+
              $user->password = bcrypt($request->get('new-password'));
              $user->password_change_at =Carbon::now();
+
          }
         $user->email =$request['email'];
         $user->name =$request['name'];
@@ -117,8 +118,7 @@ class HomeController extends Controller
 
 
     public function userdata(){
-        dd('homeControler');
-        $file = public_path('file/data.csv');
+        $file = public_path('file/Data.csv');
 
         if (!file_exists($file) || !is_readable($file)) {
             return false;

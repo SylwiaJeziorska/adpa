@@ -12,14 +12,18 @@ class CheckUser
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \Closure  $next
+     * @param  string|null  $guard
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle($request, Closure $next, $guard = null)
     {
-        if (Auth::user()->password_change_at == null)
-        {
-            return redirect('newPassword');
+        if (Auth::guard($guard)->check()) {
+            if (Auth::user()->password_change_at == null) {
+                return redirect('newPassword');
+            }
+            return $next($request);
         }
         return $next($request);
+
     }
 }
