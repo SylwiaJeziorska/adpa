@@ -37,11 +37,10 @@
                             <label for="password" >Mot de passe</label>
 
                             <div >
-                                <input style="width: 100%" id="password" type="password"  name="password" required>
+                                <input style="width: 100%" id="password" type="password"  name="password"reqired >
 
                                 @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
+                                    <span class="help-block">                                        <strong>{{ $errors->first('password') }}</strong>
                                     </span>
                                 @endif
                             </div>
