@@ -35,16 +35,14 @@ class ContactController extends Controller
             'email'=> $request->email,
             'name'=>$request->name,
             'contactMessage'=> $request->message,
-            'subject'=>$request->object
+            'subject'=>$request->subject
 
         );
-
         Mail::send('emails.contact', $data, function($message)use ($data){
             $message->from('mailjet@comite-adpa.fr');
             $message->to('sylwia.jeziorska@zedd.fr');
-//            $message->replyTo($data['email']);
-            $message->subject($data['contactMessage']);
-
+            $message->replyTo($data['email']);
+            $message->subject('[www.comite-adpa.fr] '.$data['subject']);
 
         });
         return redirect()->back()->with('message', 'Merci pour le message! Nous reviendrons vers vous bientôt!');

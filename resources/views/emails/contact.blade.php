@@ -1,5 +1,7 @@
-<h1>Nouveau message de www.comite-adpa.fr</h1>
 <p>
-    {{$contactMessage}}
+    Subjet : {{$subject}}
 </p>
-<p>tak to ja</p>
+<p>
+    Message: {{$contactMessage}}
+</p>
+

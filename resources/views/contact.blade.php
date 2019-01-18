@@ -41,7 +41,7 @@
                 <div class="form-group{{ $errors->has('object') ? ' has-error' : '' }}">
 
                     <div class="col-md-11 col-md-offset-1">
-                        <input id="email" type="object" placeholder="Objet" class="form-control" name="object"
+                        <input id="email" type="object" placeholder="Objet" class="form-control" name="subject"
                                value="{{ old('object') }}" required>
 
                         @if ($errors->has('object'))
