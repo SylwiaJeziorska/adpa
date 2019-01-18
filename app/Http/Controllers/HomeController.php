@@ -138,9 +138,8 @@ class HomeController extends Controller
             }
             fclose($handle);
         }
-//echo phpinfo();
 
-        for ($i = 400; $i < 500; $i++) {
+        for ($i =0 ; $i <604; $i++) {
             $newPassword = Hash::make($userdata[$i]['password']);
             $user = new User;
             $user->username = $userdata[$i]['username'];

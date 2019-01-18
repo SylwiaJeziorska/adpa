@@ -33,7 +33,7 @@ class InboxMessage extends Notification
         return (new MailMessage)
             ->error()
             ->subject(config('admin.name') . ", you got a new message!")
-            ->from($this->message->email, $this->message->name)
+            ->from('mailjet@comite-adpa.fr', $this->message->name)
             ->line($this->message->message);
 //        dd(MailMessage);
 

@@ -13,6 +13,6 @@ class Admin extends Model
 
     public function __construct() {
         $this->admin = config('sylwia');
-        $this->email = config('sylwiajeziorska@gmail.com');
+        $this->email = config('mailjet@comite-adpa.fr');
     }
 }

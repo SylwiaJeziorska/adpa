@@ -1,4 +1,4 @@
-<h1>New message</h1>
+<h1>Nouveau message de www.comite-adpa.fr</h1>
 <p>
     {{$contactMessage}}
 </p>
