@@ -3,6 +3,9 @@
     {{--{{dd($post->title)}}--}}
 
     <div class="container">
+        <a  class="btn btn-success" href="{{ route('post.index')}}">
+            Retourner
+        </a>
             <div class=" row">
 
                 <div class="col-sm-10">
@@ -23,8 +26,6 @@
         </div>
         @endif
 
-        {{--<a  class="btn btn-success" href="{{ route('post.index')}}">--}}
-            {{--Retourner--}}
-        {{--</a>--}}
+
     </div>
 @endsection

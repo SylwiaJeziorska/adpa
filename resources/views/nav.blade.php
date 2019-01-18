@@ -39,7 +39,7 @@
                 <ul class="dropdown-menu" role="menu">
                     <li>
                         <a  class="navbar-brand" href="{{ route('post.index')}}">
-                            Flesh info
+                            Actualité
                         </a>
 
 

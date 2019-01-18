@@ -21,7 +21,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::all()->toArray();
+        $posts = Post::all()->sortByDesc("created_at");
 
         return view('post.index', compact('posts'));
     }

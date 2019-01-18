@@ -15,7 +15,7 @@ class MediaController extends Controller
     public function index()
     {
 
-        $medias = Media::all()->toArray();
+        $medias = Media::all()->sortByDesc("created_at");
 
         return view('media.index', compact('medias'));
     }

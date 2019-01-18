@@ -8,9 +8,9 @@
         })
     </script>
     <div class="container">
-        {{--<a class="btn btn-success" href="{{ route('post.index')}}">--}}
-            {{--Retourner--}}
-        {{--</a>--}}
+        <a style="margin-bottom: 20px"  class="btn btn-success" href="{{ route('post.index')}}">
+            Retourner
+        </a>
         <form method="POST" action="{{route('post.update', $post->id)}}" enctype="multipart/form-data">
 
             <div class="form-group row">

@@ -12,10 +12,10 @@
             <form class="form-horizontal col-md-6 col-md-offset-2 " method="POST" action="{{('/contact') }}">
                 {{ csrf_field() }}
 
-                <div class="form-group{{ $errors->has('nome') ? ' has-error' : '' }}">
+                <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
 
                     <div class="col-md-11 col-md-offset-1">
-                        <input id="name" type="text" class="form-control" placeholder="Nome" name="name"
+                        <input id="name" type="text" class="form-control" placeholder="Nom" name="name"
                                value="{{ old('name') }}" required>
 
                         @if ($errors->has('name'))
@@ -41,7 +41,7 @@
                 <div class="form-group{{ $errors->has('object') ? ' has-error' : '' }}">
 
                     <div class="col-md-11 col-md-offset-1">
-                        <input id="email" type="object" placeholder="Object" class="form-control" name="object"
+                        <input id="email" type="object" placeholder="Objet" class="form-control" name="object"
                                value="{{ old('object') }}" required>
 
                         @if ($errors->has('object'))

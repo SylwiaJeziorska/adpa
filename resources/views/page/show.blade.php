@@ -9,6 +9,9 @@
         {{--{{$page->title}}--}}
         {{--</div>--}}
         {{--</div>--}}
+        <a  style="margin-bottom: 20px" class="btn btn-success" href="{{ route('page.index')}}">
+            Retourner
+        </a>
         <div class=" row">
             <div class="pageTitle">
                 <h1>{!! $page->title !!}</h1>
@@ -25,7 +28,9 @@
                             {!! $post->title !!}
 
                         </h3>
+                        @if($post->file_name)
                         <img class="col-sm-12 " src="{{ URL::to('/') }}/img/{{$post->file_name}} ">
+                        @endif
                         <p>
                             {!! $post->content !!}
 

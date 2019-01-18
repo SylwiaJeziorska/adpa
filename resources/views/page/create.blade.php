@@ -1,13 +1,25 @@
 @extends('layouts.app')
 @section('content')
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey= 0zarq7dq309c4edemkghb5cy56hj5l8ddz4loksx98tfv2w8 "></script>
     <script>
+
         tinyMCE.init({
             selector: '#mytextarea',
             plugins: "link, advlist",
-            advlist_bullet_styles: "square"
+            advlist_bullet_styles: "square",
+            language: 'fr_FR',
+            language_url: 'https://www.comite-adpa.fr/file/langs/fr_FR.js',
+            toolbar: [
+                'bold italic underline removeformat | strikethrough superscript subscript | fontsizeselect | backcolor | bullist numlist | styleselect | lineheightselect',
+                'link image media table hr | fullscreen undo redo print restoredraft'
+            ]
+
         })
     </script>
     <div class="container">
+        <a  style="margin-bottom: 20px" class="btn btn-success" href="{{ route('page.index')}}">
+            Retourner
+        </a>
         <form method="post"  action="{{url('page')}}">
             <div class="form-group row">
                 {{csrf_field()}}
@@ -34,9 +46,9 @@
                                checked>
                         <label for="huey" style="margin-right: 20px;">Aucun</label>
                         <input type="radio"  name="modelId" value="1">
-                        <label for="dewey" style="margin-right: 20px;">Flash info</label>
+                        <label for="dewey" style="margin-right: 20px;">Avec actualité</label>
                         <input type="radio" name="modelId" value="2">
-                        <label for="louie" style="margin-right: 20px;">Pdf</label>
+                        <label for="louie" style="margin-right: 20px;">Avec Pdf</label>
                     </div>
 
 

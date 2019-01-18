@@ -22,7 +22,7 @@
                     <td>{!! str_limit($post['content'], 200,'...')!!}</td>
 
 
-                    <td><a class="btn btn-default btn-sm" href="{{route('page.show',$post['id'])}}">Voir plus</a></td>
+                    <td><a class="btn btn-default btn-sm" href="{{route('page.show',$post['id'])}}">Aperçu</a></td>
 
                     <td>
 

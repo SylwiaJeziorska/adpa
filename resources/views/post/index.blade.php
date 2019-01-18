@@ -1,6 +1,11 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
+        @if(session('message'))
+            <div class='alert alert-success'>
+                {{ session('message') }}
+            </div>
+        @endif
         <a  href="{{route('post.create')}}" class="btn btn-warning">Ajouter un actualité</a>
         <table class="table table-striped">
             <thead>
@@ -9,6 +14,7 @@
                 <th>Titre</th>
 
                 <th>Contenu</th>
+                <th></th>
                 <th></th>
                 <th></th>
 
@@ -21,7 +27,15 @@
                     <td>{{$post['title']}}</td>
                     <td>{!! str_limit($post['content'], 200,'...')!!}</td>
 
-                    <td><a class="btn btn-default btn-sm" href="{{route('post.show',$post['id'])}}">Voir plus</a></td>
+                    <td><a class="btn btn-default btn-sm" href="{{route('post.show',$post['id'])}}">Aperçu</a></td>
+
+                    <td>   <a  class="btn btn-default btn-sm" href=" {{route('post.edit', $post)}}">
+                            Modifier
+                        </a>
+                    </td>
+                    <td>
+
+                    </td>
                     <td>
                         <form method="post" action="{{route('send', $post['id'])}}">
                             {{csrf_field()}}
@@ -30,9 +44,6 @@
 
                         </form>
                     </td>
-                    <td>   <a  class="btn btn-default btn-sm" href=" {{route('post.edit', $post)}}">
-                            Modifier
-                        </a></td>
                     <td>
 
                         <form onsubmit="return confirm('Are you sure you want to delete?')"

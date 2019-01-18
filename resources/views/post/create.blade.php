@@ -1,13 +1,24 @@
 @extends('layouts.app')
 @section('content')
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey= 0zarq7dq309c4edemkghb5cy56hj5l8ddz4loksx98tfv2w8 "></script>
+
     <script>
         tinyMCE.init({
             selector: 'textarea',
-            plugins: "link, advlist",
-            advlist_bullet_styles: "square"
+            plugins: "link, lists advlist",
+            advlist_bullet_styles: "square",
+            language: 'fr_FR',
+            language_url: 'https://www.comite-adpa.fr/file/langs/fr_FR.js',
+            toolbar: [
+                'bold italic underline removeformat | strikethrough superscript subscript | fontsizeselect | backcolor | bullist numlist | styleselect | lineheightselect',
+                'link image media table hr | fullscreen undo redo print restoredraft'
+            ]
         })
     </script>
     <div class="container">
+        <a  style="margin-bottom: 20px" class="btn btn-success" href="{{ route('post.index')}}">
+            Retourner
+        </a>
         <form method="post"  action="{{url('post')}}" enctype="multipart/form-data">
             <div class="form-group row">
                 {{csrf_field()}}

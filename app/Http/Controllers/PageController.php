@@ -21,7 +21,7 @@ class PageController extends Controller
      */
     public function index()
     {
-        $pages = Page::all()->toArray();
+        $pages = Page::all()->sortByDesc("created_at");
 
         return view('page.index', compact('pages'));
     }

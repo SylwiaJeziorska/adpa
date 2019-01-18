@@ -8,6 +8,9 @@
         })
     </script>
     <div class="container">
+        <a  style="margin-bottom: 20px" class="btn btn-success" href="{{ route('page.index')}}">
+            Retourner
+        </a>
         <form method="POST" action="{{route('page.update', $page->id)}}" >
 
             <div class="form-group row">

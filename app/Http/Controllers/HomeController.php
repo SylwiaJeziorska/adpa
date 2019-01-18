@@ -7,6 +7,7 @@ use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Validator;
 use Mailjet\LaravelMailjet\Facades\Mailjet;
@@ -61,9 +62,12 @@ class HomeController extends Controller
 
 //dd(Resources::$Email);
         $response = $mailjet->post(Resources::$Email, ['body' => $body]);
-//        $response->success() && var_dump($response->getData());
+        return redirect('/post')->with("message","L'actualité à bien été envoyée");
+
+        $response->success() && var_dump($response->getData());
         if ($response->success())
-            echo 'succes';
+            return redirect('/post')->with("message","L'actualité à bien été envoyée");
+
         else
             var_dump($response->getStatus());
     }
@@ -103,11 +107,14 @@ class HomeController extends Controller
          }
         $user->email =$request['email'];
         $user->name =$request['name'];
+
         $user->address =$request['address'];
         $user->prenom =$request['prenom'];
         $user->tel =$request['tel'];
+        $user->cp =$request['cp'];
+        $user->city =$request['city'];
 
-
+//dd($request);
         //Change Password
 
         $user->save();
@@ -118,35 +125,44 @@ class HomeController extends Controller
     }
 
 
-    public function userdata(){
-        $file = public_path('file/Data.csv');
-
-        if (!file_exists($file) || !is_readable($file)) {
-            return false;
-
-        }
-
-        $delimiter = ',';
-        $header = null;
-        $userdata = array();
-        if (($handle = fopen($file, 'r')) !== false) {
-            while (($row = fgetcsv($handle, 1000, $delimiter)) !== false) {
-                if (!$header)
-                    $header = $row;
-                else
-                    $userdata[] = array_combine($header, $row);
-            }
-            fclose($handle);
-        }
-
-        for ($i =0 ; $i <604; $i++) {
-            $newPassword = Hash::make($userdata[$i]['password']);
-            $user = new User;
-            $user->username = $userdata[$i]['username'];
-            $user->password = $newPassword;
-            $user->save();
-
-
-        }
-    }
+//    public function userdata()
+//    {
+//        $file = public_path('file/Data.csv');
+//
+//        if (!file_exists($file) || !is_readable($file)) {
+//            return false;
+//
+//        }
+//
+//        $delimiter = ',';
+//        $header = null;
+//        $userdata = array();
+//        if (($handle = fopen($file, 'r')) !== false) {
+//            while (($row = fgetcsv($handle, 1000, $delimiter)) !== false) {
+//                if (!$header)
+//                    $header = $row;
+//                else
+//                    $userdata[] = array_combine($header, $row);
+//            }
+//            fclose($handle);
+//        }
+//
+//        for ($i =0 ; $i <604; $i++) {
+//
+//            $newPassword = Hash::make($userdata[$i]['password']);
+//
+//            $user = new User;
+//            $user->username = $userdata[$i]['username'];
+//            $user->password = $newPassword;
+////            print_r($user);
+//            $user->save();
+//
+//
+//        }
+//
+//
+////        DB::table('users')->insert($data);
+////        return 'Jobi done ';
+//
+//    }
 }

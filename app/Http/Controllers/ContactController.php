@@ -47,7 +47,7 @@ class ContactController extends Controller
 
 
         });
-        return redirect()->back()->with('message', 'thanks for the message! We will get back to you soon!');
+        return redirect()->back()->with('message', 'Merci pour le message! Nous reviendrons vers vous bientôt!');
     }
 
 }
