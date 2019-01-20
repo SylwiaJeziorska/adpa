@@ -40,7 +40,7 @@ class MediaController extends Controller
     public function store(Request $request)
     {
         if ($request->file('image')) {
-        $this->validate($request, ['image.*' => 'mimes:pdf|max:2048']);
+        $this->validate($request, ['image' => 'mimes:pdf|max:2048']);
 
         $image = $request->file('image');
             $destinationPath = 'pdf';

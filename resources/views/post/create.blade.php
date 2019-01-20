@@ -15,9 +15,19 @@
         })
     </script>
     <div class="container">
+
         <a  style="margin-bottom: 20px" class="btn btn-success" href="{{ route('post.index')}}">
             Retourner
         </a>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <form method="post"  action="{{url('post')}}" enctype="multipart/form-data">
             <div class="form-group row">
                 {{csrf_field()}}

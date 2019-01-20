@@ -1,6 +1,16 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
+
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
         <form action="{{url('media')}}" method="POST" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="form-group">

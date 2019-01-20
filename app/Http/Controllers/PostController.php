@@ -48,7 +48,7 @@ class PostController extends Controller
 
         $post = new Post;
         if ($request->file('image')) {
-            $this->validate($request, ['image.*' => 'mimes:pdf|max:2048']);
+            $this->validate($request, ['image' => 'mimes:jpg,png,jpeg|max:2048']);
 
             $image = $request->file('image');
             $destinationPath = 'img';
