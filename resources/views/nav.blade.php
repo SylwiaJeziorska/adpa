@@ -68,10 +68,10 @@
             <ul class="nav navbar-nav">
                 <li><a href={{ url('page/6') }}> Accueil</a></li>
                 <li><a href={{ url('page/17') }}> Le comité</a></li>
-                <li><a href={{ url('page/6') }}> Prestations </a></li>
-                <li><a href={{ url('page/6') }}> Billeterie </a></li>
-                <li><a href={{ url('page/6') }}> Réductions </a></li>
-                <li><a href={{ url('page/6') }}> Les dates clés </a></li>
+                <li><a href={{ url('page/18') }}> Prestations </a></li>
+                <li><a href={{ url('page/19') }}> Billeterie </a></li>
+                <li><a href={{ url('page/20') }}> Réductions </a></li>
+                <li><a href={{ url('page/21') }}> Les dates clés </a></li>
                 <li><a href={{ url('contact') }}> Contact </a></li>
 
 
