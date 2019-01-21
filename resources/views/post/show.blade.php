@@ -4,7 +4,8 @@
 
     <div class="container">
         <a  class="btn btn-success" href="{{ route('post.index')}}">
-            Retourner
+            Revenir
+
         </a>
             <div class=" row">
 

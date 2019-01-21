@@ -10,7 +10,7 @@
         {{--</div>--}}
         {{--</div>--}}
         <a  style="margin-bottom: 20px" class="btn btn-success" href="{{ route('page.index')}}">
-            Retourner
+            Revenir
         </a>
         <div class=" row">
             <div class="pageTitle">

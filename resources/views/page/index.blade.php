@@ -26,17 +26,17 @@
 
                     <td>
 
-                        {{--<form onsubmit="return confirm('Are you sure you want to delete?')"--}}
-                              {{--action="{{route('page.destroy',$post['id'])}}"--}}
-                              {{--method="post"--}}
-                              {{--style="display: inline">--}}
-                            {{--{{csrf_field()}}--}}
-                            {{--{{method_field('DELETE')}}--}}
-                            {{--<button type="submit" class="btn btn-danger cursor-pointer  btn-sm">--}}
-                                {{--Supprimer--}}
-                                {{--<!-- <i class="text-danger fa fa-remove"></i> -->--}}
-                            {{--</button>--}}
-                        {{--</form>--}}
+                        <form onsubmit="return confirm('Are you sure you want to delete?')"
+                              action="{{route('page.destroy',$post['id'])}}"
+                              method="post"
+                              style="display: inline">
+                            {{csrf_field()}}
+                            {{method_field('DELETE')}}
+                            <button type="submit" class="btn btn-danger cursor-pointer  btn-sm">
+                                Supprimer
+                                <!-- <i class="text-danger fa fa-remove"></i> -->
+                            </button>
+                        </form>
 
 
                     </td>
