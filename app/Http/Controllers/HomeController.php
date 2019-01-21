@@ -33,6 +33,9 @@ class HomeController extends Controller
     {
         return view('home');
     }
+    public function admin(){
+        return view('admin');
+    }
     public function newsLetter($id){
         $mailjet = new \Mailjet\Client(('b4407f5d1e52e1ad89c98f8cfc1fdaf3'),('20fd1f38fe1b5cf2a1112a6fbba92a5d'));
 
@@ -46,8 +49,8 @@ class HomeController extends Controller
 //        dd($userEmail) ;
         $body = [
             'FromEmail' => "mailjet@comite-adpa.fr",
-            'FromName' => "Mailjet Pilot",
-            'Subject' => "Your email flight plan!",
+            'FromName' => "Comite-ADPA",
+            'Subject' => "CE-ADPA - ".$post['title'],
             'MJ-TemplateID' => 646477,
             'MJ-TemplateLanguage' => true,
 

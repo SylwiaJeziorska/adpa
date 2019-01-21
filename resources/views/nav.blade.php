@@ -31,34 +31,34 @@
                 {{--Admin--}}
             {{--</a>--}}
             @if(Auth::user()->role)
-            <li class="dropdown">
-                <a style="color:white; margin: 0" class="navbar-brand" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                    Admin  <span class="caret"></span>
+            <li >
+                <a href="{!! route('admin') !!}"style="color:white; margin: 0" class="navbar-brand"  >
+                    Admin
                 </a>
 
-                <ul class="dropdown-menu" role="menu">
-                    <li>
-                        <a  class="navbar-brand" href="{{ route('post.index')}}">
-                            Actualité
-                        </a>
+                {{--<ul class="dropdown-menu" role="menu">--}}
+                    {{--<li>--}}
+                        {{--<a  class="navbar-brand" href="{{ route('post.index')}}">--}}
+                            {{--Actualité--}}
+                        {{--</a>--}}
 
 
-                    </li>
-                    <li>
-                        <a class="navbar-brand" href="{{ route('media.index')}}">
-                            PDF
-                        </a>
+                    {{--</li>--}}
+                    {{--<li>--}}
+                        {{--<a class="navbar-brand" href="{{ route('media.index')}}">--}}
+                            {{--PDF--}}
+                        {{--</a>--}}
 
 
-                    </li>
-                    <li>
-                        <a  class="navbar-brand" href="{{ route('page.index')}}">
-                            Page
-                        </a>
+                    {{--</li>--}}
+                    {{--<li>--}}
+                        {{--<a  class="navbar-brand" href="{{ route('page.index')}}">--}}
+                            {{--Page--}}
+                        {{--</a>--}}
 
 
-                    </li>
-                </ul>
+                    {{--</li>--}}
+                {{--</ul>--}}
             </li>
         @endif
         </div>

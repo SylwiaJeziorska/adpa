@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Middleware\CheckUser;
 
 
+
 class PostController extends Controller
 {
     public function __construct()
@@ -133,7 +134,13 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
+//        dd($post);
+
+//
+        $pathToFile = public_path("img/" .$post->file_name);
+        \File::delete($pathToFile);
         Post::destroy($post->id);
+
         return redirect('/post');
 
 

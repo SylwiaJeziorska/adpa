@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\media;
+use File;
 use Illuminate\Http\Request;
 
 class MediaController extends Controller
@@ -40,7 +41,7 @@ class MediaController extends Controller
     public function store(Request $request)
     {
         if ($request->file('image')) {
-        $this->validate($request, ['image' => 'mimes:pdf|max:2048']);
+        $this->validate($request, ['image' => 'mimes:pdf']);
 
         $image = $request->file('image');
             $destinationPath = 'pdf';
@@ -105,8 +106,11 @@ class MediaController extends Controller
      */
     public function destroy($media)
     {
+        $themedia = Media::find($media);
 
+        $pathToFile = public_path("pdf/" .$themedia->file_name);
         Media::destroy($media);
+        File::delete($pathToFile);
         return redirect('/media');
     }
 }

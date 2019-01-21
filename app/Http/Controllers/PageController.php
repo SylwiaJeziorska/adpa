@@ -115,7 +115,9 @@ class PageController extends Controller
      */
     public function destroy(Page $page)
     {
+//        dd($page);
         Page::destroy($page->id);
+
         return redirect('/page');
     }
 }

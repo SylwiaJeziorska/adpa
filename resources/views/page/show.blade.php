@@ -9,10 +9,33 @@
         {{--{{$page->title}}--}}
         {{--</div>--}}
         {{--</div>--}}
-        <a  style="margin-bottom: 20px" class="btn btn-success" href="{{ route('page.index')}}">
-            Revenir
-        </a>
-        <div class=" row">
+        {{--<a  style="margin-bottom: 20px" class="btn btn-success" href="{{ route('page.index')}}">--}}
+            {{--Revenir--}}
+        {{--</a>--}}
+        {{--<div class=" row">--}}
+
+                {{--<div class="col-md-2 " style="padding: 0;background-color: #847F80;">--}}
+                    {{--<div  class="panel-body">--}}
+
+                        {{--<div class="panel panel-default" style="margin: 0">--}}
+                            {{--<ul class="list-group">--}}
+                                {{--<li class="list-group-item ">    <a   href="{{ route('page.index')}}">--}}
+                                        {{--Retourner--}}
+                                    {{--</a>--}}
+                                {{--</li>--}}
+                            {{--</ul>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+            {{--<div class="row">--}}
+                {{--<div class="col-md-2 " style="padding: 0">--}}
+                    {{--<div class="panel panel-default">--}}
+
+                        {{--@include('dashboard')--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+                {{--<div class="col-md-8 col-md-offset-1 " >--}}
             <div class="pageTitle">
                 <h1>{!! $page->title !!}</h1>
 
@@ -67,5 +90,6 @@
         {{--<a  class="btn btn-success" href="{{ route('page.index')}}">--}}
         {{--Retourner--}}
         {{--</a>--}}
+            </div>
     </div>
 @endsection

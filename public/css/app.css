@@ -8554,3 +8554,8 @@ footer span {
   margin-top: 50px;
 }
 
+.panel a {
+  color: #847f80;
+  text-decoration: none;
+}
+

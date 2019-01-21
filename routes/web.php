@@ -37,3 +37,4 @@ Route::resource('page', 'PageController');
 
 Route::get('/contact', 'ContactController@show')->name('contact');
 Route::post('/contact',  'ContactController@mailToAdmin');
+Route::get('/admin', 'HomeController@admin')->name('admin');
