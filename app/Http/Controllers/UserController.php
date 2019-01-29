@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
-class AdminController extends Controller
+class UserController extends Controller
 {
     /*
     |--------------------------------------------------------------------------
@@ -112,4 +112,5 @@ class AdminController extends Controller
 
         return back();
     }
+
 }

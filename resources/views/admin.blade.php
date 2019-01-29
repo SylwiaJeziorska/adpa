@@ -12,7 +12,6 @@
             <div class="col-md-8 col-md-offset-1">
                 <div class="panel panel-default">
                     <div class="panel-heading">Bienvenue sur l'espace admin</div>
-
                     <div class="panel-body">
                         @if (session('status'))
                             <div class="alert alert-success">
@@ -20,7 +19,9 @@
                             </div>
                         @endif
 
-                            Vous êtes connecté en tant que  {{ Auth::user()->name }}
+                        <p>Vous êtes connecté en tant que  {{ Auth::user()->name }}</p>
+                            <p>{{$usersNumber}} utilisateurs ont changer les mots de passe.</p>
+
                     </div>
                 </div>
             </div>

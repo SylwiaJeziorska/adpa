@@ -34,7 +34,9 @@ class HomeController extends Controller
         return view('home');
     }
     public function admin(){
-        return view('admin');
+        $usersNumber = User::whereNotNull('email')->get()->count();
+
+        return view('admin',compact('usersNumber'));
     }
     public function newsLetter($id){
         $mailjet = new \Mailjet\Client(('b4407f5d1e52e1ad89c98f8cfc1fdaf3'),('20fd1f38fe1b5cf2a1112a6fbba92a5d'));
