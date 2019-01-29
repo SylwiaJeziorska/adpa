@@ -21,7 +21,7 @@
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }} formPadding" >
                             <label class='first'for="email" >Identifiant</label><br/>
 
-                            <label for="email" class="standard">E-mail</label><br/>
+                            <label for="email" class="standard">E-mail / Matricule</label><br/>
 
                             <div >
                                 <input style="width: 100%" type="text"  name="email"  value="{{ old('email') }}" required autofocus>

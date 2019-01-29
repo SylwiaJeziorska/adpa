@@ -1,10 +1,9 @@
 @extends('layouts.app')
 @section('content')
     <script>
-
         tinyMCE.init({
-            selector: '#mytextarea',
-            plugins: "link, advlist",
+            selector: 'textarea',
+            plugins: "link, lists advlist",
             advlist_bullet_styles: "square",
             language: 'fr_FR',
             language_url: 'https://www.comite-adpa.fr/file/langs/fr_FR.js',
@@ -12,7 +11,6 @@
                 'bold italic underline removeformat | strikethrough superscript subscript | fontsizeselect | backcolor | bullist numlist | styleselect | lineheightselect',
                 'link image media table hr | fullscreen undo redo print restoredraft'
             ]
-
         })
     </script>
     <div class="container">

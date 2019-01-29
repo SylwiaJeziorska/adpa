@@ -38,3 +38,8 @@ Route::resource('page', 'PageController');
 Route::get('/contact', 'ContactController@show')->name('contact');
 Route::post('/contact',  'ContactController@mailToAdmin');
 Route::get('/admin', 'HomeController@admin')->name('admin');
+Route::get('/addUsers', 'AdminController@addUsersBlade')->name('add');
+Route::post('/add', 'AdminController@addUsers')->name('addUsers');
+Route::get('/usersList', 'AdminController@usersList')->name('usersList');
+Route::get('/user/{user}/edit/', 'AdminController@edit')->name('userEdit');
+Route::get('/user/{user}/update/', 'AdminController@userUpdate')->name('userUpdate');

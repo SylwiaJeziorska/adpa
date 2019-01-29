@@ -10,6 +10,12 @@
         <li class="list-group-item">
             <a href="{!!route('media.index') !!}">Pdf</a>
 
+        </li>    <li class="list-group-item">
+            <a href="{!!route('add') !!}">Ajouter des utilisateurs</a>
+
+        </li>   </li>    <li class="list-group-item">
+            <a href="{!!route('usersList') !!}">Liste des utilisateurs</a>
+
         </li>
 
     </ul>
