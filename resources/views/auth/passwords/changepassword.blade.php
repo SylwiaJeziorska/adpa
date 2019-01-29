@@ -146,7 +146,7 @@
                             <div class="col-md-12">
                                 <label  for="phone"class="standard">Tel</label><br/>
 
-                                <input id="phone" type="text" placeholder="Tel" class="form-control" name="phone" value="{{ old('phone') }}" >
+                                <input id="tel" type="text" placeholder="Tel" class="form-control" name="tel" value="{{Auth::user()->tel}}" >
 
                                 @if ($errors->has('phone'))
                                     <span class="help-block">
