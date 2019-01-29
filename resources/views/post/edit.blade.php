@@ -39,7 +39,15 @@
                 </div>
             </div>
             <div class="col-md-8 col-md-offset-1 ">
-
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <form method="POST" action="{{route('post.update', $post->id)}}" enctype="multipart/form-data">
 
                     <div class="form-group row">

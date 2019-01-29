@@ -88,16 +88,14 @@ class UserController extends Controller
         return view('/users.edit',['user' => $user]);
 
     }
-    public function userUpdate(Request $request){
-
+    public function userUpdate(Request $request, User $user){
 
 
             $this->validate($request, [
-                'name' => 'required|string|max:255',
-                'prenom' => 'required|string|max:255',
-                'email' => 'required|string|email|max:255',
+                'name' => 'string|max:255',
+                'prenom' => 'string|max:255',
+                'email' => 'string|email|max:255',
             ]);
-
 
 
 

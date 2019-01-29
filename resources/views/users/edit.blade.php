@@ -30,8 +30,16 @@
                 </div>
             </div>
             <div class="col-md-8 col-md-offset-1 " >
-
-        <form method="POST" class="form-horizontal"action="{{route('userUpdate', $user->id)}}" >
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+        <form method="POST" class="form-horizontal"action="{{route('userUpdate', $user)}}" >
 
             <div class="form-group row">
                 {{ method_field('PUT') }}

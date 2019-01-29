@@ -42,4 +42,4 @@ Route::get('/addUsers', 'UserController@addUsersBlade')->name('add');
 Route::post('/add', 'UserController@addUsers')->name('addUsers');
 Route::get('/usersList', 'UserController@usersList')->name('usersList');
 Route::get('/user/{user}/edit/', 'UserController@edit')->name('userEdit');
-Route::get('/user/{user}/update/', 'UserController@userUpdate')->name('userUpdate');
+Route::put('/user/{user}/update/', 'UserController@userUpdate')->name('userUpdate');
