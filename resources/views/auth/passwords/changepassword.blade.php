@@ -6,7 +6,7 @@
 <div class="container changePsw">
     <div class="row">
         <div class="col-md-6 col-md-offset-4 logo" id="logo">
-            <img  height="100px"src="{{ URL::to('/') }}/img/logo1.svg">
+            <img  height="100px"src="{{ URL::to('/') }}/img/logo1.png">
             <h2>ADPA Comité d’entreprise</h2>
         </div>
 

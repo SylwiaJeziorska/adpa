@@ -8468,6 +8468,11 @@ button.close {
   margin-bottom: 45px;
 }
 
+.welcome-logo {
+  margin: auto;
+  padding-bottom: 20px;
+}
+
 .navBlade .logo {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -8480,7 +8485,7 @@ button.close {
 }
 
 .navBlade .logo h2 {
-  margin-left: 50px;
+  margin-left: 10px;
 }
 
 .navBlade .logo h3 {

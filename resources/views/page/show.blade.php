@@ -45,20 +45,26 @@
                 {!! $page->content !!}
             </div>
             <div class="col-sm-5 col-sm-offset-1 row">
-                @isset($post)
-                    <div class="lastNews">
-                        <h3>
+                @isset($posts)
+
+                            @foreach($posts as $post)
+                        <div class="lastNews " >
+                            <h3>
                             {!! $post->title !!}
 
                         </h3>
                         @if($post->file_name)
                         <img class="col-sm-12 " src="{{ URL::to('/') }}/img/{{$post->file_name}} ">
-                        @endif
+                                <hr/>
+
+                            @endif
                         <p>
                             {!! $post->content !!}
 
                         </p>
+                            <hr>
                     </div>
+                    @endforeach
 
                 @endisset
                 @isset($medias)

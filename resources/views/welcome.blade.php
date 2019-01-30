@@ -3,7 +3,7 @@
 <div class="container" id="login-blade" >
     <div class="row">
         <div class="col-md-4 col-md-offset-4 logo" id="logo">
-            <img  height="100px"src="{{ URL::to('/') }}/img/logo1.svg">
+            <img  class="welcome-logo" width="100px"src="{{ URL::to('/') }}/img/logo1.png">
             <h2>ADPA Comité d’entreprise</h2>
         </div>
 

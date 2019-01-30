@@ -2,7 +2,7 @@
     <div class="row">
         <div class=" logo" id="logo">
             <div>
-                <img  height="100px"src="{{ URL::to('/') }}/img/logo1.svg">
+                <img  height="100px"src="{{ URL::to('/') }}/img/logo1.png">
                 {{--<h3> Acompanier à domicile <br/><span>pour préserver l'autonomie</span></h3>--}}
 
             </div>
@@ -67,6 +67,8 @@
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
                 <li><a href={{ url('page/6') }}> Accueil</a></li>
+                <li><a href={{ url('post') }}> Actualités</a></li>
+
                 <li><a href={{ url('page/17') }}> Le comité</a></li>
                 <li><a href={{ url('page/18') }}> Prestations </a></li>
                 <li><a href={{ url('page/19') }}> Billeterie </a></li>

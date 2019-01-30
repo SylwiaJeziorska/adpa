@@ -81,7 +81,7 @@
                     <br/>38100 Grenoble<br/>
                     04 76 22 82 84,<br/>
                     Les lundis et mercredis de 14h-17h<br/>
-                    <span style="color: #E3799F">info@comite-adpa.fr</span>
+                    <span style="color: #E3799F">comite-entreprise@adpa38.fr</span>
                 </p>
             </div>
         </div>

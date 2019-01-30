@@ -58,13 +58,13 @@ class PageController extends Controller
      */
     public function show(Page $page)
     {
-        $post= Post::orderBy('id','desc')->first();
+        $posts= Post::orderBy('id','desc')->take(3)->get();
         $page = Page::find($page->id);
 
         $medias = Media::All();
 
         if ($page->modelId==1){
-            return view('page.show',  ['page' => $page, 'post'=>$post]);
+            return view('page.show',  ['page' => $page, 'posts'=>$posts]);
 
         }elseif ($page->modelId==2){
 

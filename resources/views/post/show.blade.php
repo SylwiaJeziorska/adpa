@@ -4,6 +4,7 @@
 
     <div class="container">
         <div class="container">
+            @if(Auth::user()->role )
             <div class="row">
                 <div class="col-md-2 " style="padding: 0;background-color: #847F80;">
                     <div class="panel-body">
@@ -28,6 +29,7 @@
                         @include('dashboard')
                     </div>
                 </div>
+                @endif
                 <div class="col-md-8 col-md-offset-1 ">
 
                     <div class=" row">
