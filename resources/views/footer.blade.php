@@ -16,7 +16,8 @@
         <div class="legales">
             <div class="container">
                 <p>
-                    Mentions légales
+                  <a style="color:white"href="{{ url('page/22') }}">  Mentions légales
+</a>
 
                 </p>
             </div>
