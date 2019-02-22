@@ -46,8 +46,8 @@
                     @if($post->file_name !==null)
 
                         <div class=" row">
-                            <div class="col-sm-10">
-                                <img src="{{ URL::to('/') }}/img/{{$post->file_name}} ">
+                            <div class="col-sm-5">
+                                <img height="300"src="{{ URL::to('/') }}/img/{{$post->file_name}} ">
                             </div>
                         </div>
                     @endif

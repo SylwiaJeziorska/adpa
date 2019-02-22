@@ -25,6 +25,7 @@
                     <tr>
                         <th>Date</th>
                         <th>Nom</th>
+                        <th>Nom</th>
 
                         <th>Prénom</th>
                         <th>Email</th>
@@ -34,9 +35,10 @@
                     <tbody>
                     @foreach($users as $user)
                         <tr>
-                            <td><nobr>{{($user['created_at']->format('d-m-Y '))}}</nobr></td>
+                            <td><nobr>{{($user['updated_at']->format('d-m-Y '))}}</nobr></td>
 
                             <td>{!! $user['name']!!}</td>
+                            <td>{!! $user['username']!!}</td>
                             <td>{!! $user['prenome']!!}</td>
                             <td>{!! $user['email']!!}</td>
 

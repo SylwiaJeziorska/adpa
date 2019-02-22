@@ -1,10 +1,10 @@
 <div style="background-color: #847F80;min-height: 100vh;" class="panel-body">
     <ul class="list-group">
         <li class="list-group-item ">
-            <a href="{!!route('page.index') !!}">Pages</a>
+            <a href="{!!route('page.index') !!}">Gérer les pages</a>
         </li>
         <li class="list-group-item">
-            <a href="{!!route('post.index') !!}">Actualité</a>
+            <a href="{!!route('index4admin') !!}">Gérer les actualités</a>
 
         </li>
         <li class="list-group-item">

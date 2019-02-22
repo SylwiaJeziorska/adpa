@@ -20,7 +20,7 @@
                         @endif
 
                         <p>Vous êtes connecté en tant que  {{ Auth::user()->name }}</p>
-                            <p>{{$usersNumber}} utilisateurs ont changer les mots de passe.</p>
+                            <p>{{$usersNumber}} utilisateurs ont changé leur mot de passe.</p>
 
                     </div>
                 </div>

@@ -3,45 +3,21 @@
     {{--{{dd($post->title)}}--}}
 
     <div class="container">
-        {{--<div class=" row">--}}
 
-        {{--<div class="col-sm-10">--}}
-        {{--{{$page->title}}--}}
-        {{--</div>--}}
-        {{--</div>--}}
-        {{--<a  style="margin-bottom: 20px" class="btn btn-success" href="{{ route('page.index')}}">--}}
-            {{--Revenir--}}
-        {{--</a>--}}
-        {{--<div class=" row">--}}
+      @if($page->modelId==null || $page->modelId==0 )
+<div class="pageTitle col-sm-10 col-sm-offset-1">
+  <h1>{!! $page->title !!}</h1>
 
-                {{--<div class="col-md-2 " style="padding: 0;background-color: #847F80;">--}}
-                    {{--<div  class="panel-body">--}}
+</div>
+<div class="col-sm-10 col-sm-offset-1">
 
-                        {{--<div class="panel panel-default" style="margin: 0">--}}
-                            {{--<ul class="list-group">--}}
-                                {{--<li class="list-group-item ">    <a   href="{{ route('page.index')}}">--}}
-                                        {{--Retourner--}}
-                                    {{--</a>--}}
-                                {{--</li>--}}
-                            {{--</ul>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-            {{--<div class="row">--}}
-                {{--<div class="col-md-2 " style="padding: 0">--}}
-                    {{--<div class="panel panel-default">--}}
+  @elseif($page->modelId==1 || $page->modelId==2)
+      <div class="pageTitle col-sm-12">
+          <h1>{!! $page->title !!}</h1>
 
-                        {{--@include('dashboard')--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-                {{--<div class="col-md-8 col-md-offset-1 " >--}}
-            <div class="pageTitle">
-                <h1>{!! $page->title !!}</h1>
-
-            </div>
-
-            <div class="col-sm-6">
+      </div>
+      <div class="col-sm-6">
+          @endif
                 {!! $page->content !!}
             </div>
             <div class="col-sm-5 col-sm-offset-1 row">
@@ -72,11 +48,13 @@
                     <h2>Les Pv</h2>
                     <div class="pdfWrapper">
                         @foreach($medias as $media)
-                            <div class="pdf">
-                                <a href="{{route('media.show',$media['id'])}}">
+                            <div class="pdf" style="margin:20px;">
+                                <a target="_blank"href="{{route('media.show',$media['id'])}}">
                                     <img height="50px" src="{{ URL::to('/') }}/img/pdf.png">
                                 </a>
-                                {{$media['created_at']->toDateString()}}
+                                <p>{{$media['created_at']->toDateString()}}</p>
+                                <p>{{$media['title']}}</p>
+
                             </div>
 
 

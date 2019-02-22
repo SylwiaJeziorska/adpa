@@ -69,7 +69,7 @@ class MediaController extends Controller
         $themedia = Media::find($media);
 
         $pathToFile = public_path("pdf/" .$themedia->file_name);
-        return response()->download($pathToFile);
+        return response()->file($pathToFile);
 //        $themedia = Media::find($media);
 //
 //        return view('media.show',  ['pdf' => $themedia]);

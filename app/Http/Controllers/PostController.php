@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\media;
 use Illuminate\Http\Request;
 use App\Http\Middleware\CheckUser;
 
@@ -22,9 +23,16 @@ class PostController extends Controller
      */
     public function index()
     {
+      $posts = Post::all()->sortByDesc("created_at");
+      $medias = Media::All()->sortByDesc("created_at");
+
+      return view('post.index', ['posts' => $posts, 'medias'=>$medias]);
+    }
+    public function index4admin()
+    {
         $posts = Post::all()->sortByDesc("created_at");
 
-        return view('post.index', compact('posts'));
+        return view('post.index4admin', compact('posts'));
     }
 
     /**
@@ -34,7 +42,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        
+
         return view('post.create');
     }
 

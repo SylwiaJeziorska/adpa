@@ -51,7 +51,7 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label for="Prenome" class="col-sm-2 col-form-label col-form-label-lg">Prenome</label>
+                <label for="Prenome" class="col-sm-2 col-form-label col-form-label-lg">Prenom</label>
                 <div class="col-md-6">
                     <input   class="form-control form-control-lg"  name="prenome"  value="{{$user->prenome}}">
                 </div>

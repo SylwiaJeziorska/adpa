@@ -4,6 +4,7 @@
     @include('nav')
     @endif
 <div class="container changePsw">
+
     <div class="row">
         <div class="col-md-6 col-md-offset-4 logo" id="logo">
             <img  height="100px"src="{{ URL::to('/') }}/img/logo1.png">
@@ -13,6 +14,17 @@
     </div>
     <div class="row">
         <div class="col-md-4 col-md-offset-4">
+      
+                  <a style="color:#847F80;" href="{{ route('logout') }}"
+                     onclick="event.preventDefault();
+                                       document.getElementById('logout-form').submit();">
+                      Se déconnecter
+                  </a>
+
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                      {{ csrf_field() }}
+                  </form>
+
             <div class="panel panel-default">
 
                 <div class="panel-heading" id="loginHeader">
@@ -160,7 +172,7 @@
                         <div class="form-group">
                             <div class="col-md-5 col-md-offset-7">
                                 <button type="submit" class="btn btn-default">
-                                    Enregister
+                                    Enregistrer
                                 </button>
                             </div>
                         </div>

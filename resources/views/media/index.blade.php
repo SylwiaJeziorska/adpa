@@ -23,6 +23,7 @@
                 </div>
             </div>
             <div class="col-md-8 col-md-offset-1 ">
+              <h1>Liste des pdf</h1>
                 <td></td>
 
                 <table class="table table-striped">
@@ -43,7 +44,7 @@
                             <td>{{$media['title']}}</td>
                             <td>{{public_path("img/" .$media['file_name'])}}</td>
 
-                            <td><a class="btn btn-success btn-sm" href="{{route('media.show',$media['id'])}}">Télécharger</a>
+                            <td><a target="_blank" class="btn btn-success btn-sm" href="{{route('media.show',$media['id'])}}">Télécharger</a>
                             </td>
 
                             <td>

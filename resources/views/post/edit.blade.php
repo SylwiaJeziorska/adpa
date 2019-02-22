@@ -1,17 +1,18 @@
 @extends('layouts.app')
 @section('content')
     <script>
-        tinyMCE.init({
-            selector: 'textarea',
-            plugins: "link, lists advlist",
-            advlist_bullet_styles: "square",
-            language: 'fr_FR',
-            language_url: 'https://www.comite-adpa.fr/file/langs/fr_FR.js',
-            toolbar: [
-                'bold italic underline removeformat | strikethrough superscript subscript | fontsizeselect | backcolor | bullist numlist | styleselect | lineheightselect',
-                'link image media table hr | fullscreen undo redo print restoredraft'
-            ]
-        })
+    tinyMCE.init({
+        plugins: "link, lists advlist,code",
+        selector: "textarea",  // change this value according to your HTML
+        menubar: "tools",
+        advlist_bullet_styles: "square",
+        language: 'fr_FR',
+        language_url: 'https://www.comite-adpa.fr/file/langs/fr_FR.js',
+        toolbar: [
+            'bold italic underline removeformat | strikethrough superscript subscript | fontsizeselect | backcolor | bullist numlist | styleselect | lineheightselect',
+            'link image media table hr | fullscreen undo redo print restoredraft'
+        ],
+    })
     </script>
     <div class="container">
         <div class="row">
@@ -67,13 +68,14 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        @if($post->file_name !==null)
+                        @if($post->file_name ==null)
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label col-form-label-sm" for="image">Add
                                     image</label><br/>
                                 <input name="image" type="file"><br/>
 
                             </div>
+                              @endif
                             <div class="form-group row">
 
 
@@ -89,7 +91,7 @@
 
 
                             </div>
-                        @endif
+
 
                     </div>
 

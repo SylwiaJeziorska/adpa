@@ -7,8 +7,8 @@
 
                 <div class="panel panel-default" style="margin: 0">
                     <ul class="list-group">
-                        <li class="list-group-item "><a  href="{{route('page.create')}}" >Ajouter un page</a>
-                        </li>
+                        <!-- <li class="list-group-item "><a  href="{{route('page.create')}}" >Ajouter un page</a>
+                        </li> -->
                     </ul>
                 </div>
             </div>
@@ -23,6 +23,7 @@
                     </div>
                 </div>
                 <div class="col-md-8 col-md-offset-1 " >
+                  <h1>Liste des pages</h1>
                     <table class="table ">
                         <thead>
                         <tr>

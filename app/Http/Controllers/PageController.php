@@ -61,7 +61,7 @@ class PageController extends Controller
         $posts= Post::orderBy('id','desc')->take(3)->get();
         $page = Page::find($page->id);
 
-        $medias = Media::All();
+        $medias = Media::All()->sortByDesc("created_at");
 
         if ($page->modelId==1){
             return view('page.show',  ['page' => $page, 'posts'=>$posts]);

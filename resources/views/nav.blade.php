@@ -36,29 +36,7 @@
                     Admin
                 </a>
 
-                {{--<ul class="dropdown-menu" role="menu">--}}
-                    {{--<li>--}}
-                        {{--<a  class="navbar-brand" href="{{ route('post.index')}}">--}}
-                            {{--Actualité--}}
-                        {{--</a>--}}
-
-
-                    {{--</li>--}}
-                    {{--<li>--}}
-                        {{--<a class="navbar-brand" href="{{ route('media.index')}}">--}}
-                            {{--PDF--}}
-                        {{--</a>--}}
-
-
-                    {{--</li>--}}
-                    {{--<li>--}}
-                        {{--<a  class="navbar-brand" href="{{ route('page.index')}}">--}}
-                            {{--Page--}}
-                        {{--</a>--}}
-
-
-                    {{--</li>--}}
-                {{--</ul>--}}
+    
             </li>
         @endif
         </div>
@@ -71,7 +49,7 @@
 
                 <li><a href={{ url('page/17') }}> Le comité</a></li>
                 <li><a href={{ url('page/18') }}> Prestations </a></li>
-                <li><a href={{ url('page/19') }}> Billeterie </a></li>
+                <li><a href={{ url('page/19') }}> Billetterie </a></li>
                 <li><a href={{ url('page/20') }}> Réductions </a></li>
                 <li><a href={{ url('page/21') }}> Les dates clés </a></li>
                 <li><a href={{ url('contact') }}> Contact </a></li>

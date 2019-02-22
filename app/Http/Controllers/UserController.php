@@ -108,7 +108,8 @@ class UserController extends Controller
         $user->save();
 
 
-        return back();
+        $users = User::All();
+      return view('users.usersList', compact('users'));
     }
 
 }

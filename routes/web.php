@@ -41,5 +41,6 @@ Route::get('/admin', 'HomeController@admin')->name('admin');
 Route::get('/addUsers', 'UserController@addUsersBlade')->name('add');
 Route::post('/add', 'UserController@addUsers')->name('addUsers');
 Route::get('/usersList', 'UserController@usersList')->name('usersList');
+Route::get('/admin/a', 'PostController@index4admin')->name('index4admin');
 Route::get('/user/{user}/edit/', 'UserController@edit')->name('userEdit');
 Route::put('/user/{user}/update/', 'UserController@userUpdate')->name('userUpdate');

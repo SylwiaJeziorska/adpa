@@ -94,8 +94,7 @@ class HomeController extends Controller
 
              $this->validate($request, [
                  'current-password' => 'required',
-                 'new-password' => 'required|string|min:6|confirmed',
-                 'name' => 'required|string|max:255',
+'new-password' => ['required','string','min:8','confirmed','regex:/^(?=.*[a-z|A-Z])(?=.*[A-Z])(?=.*\d).+$/'],                 'name' => 'required|string|max:255',
                  'prenom' => 'required|string|max:255',
                  'email' => 'required|string|email|max:255',
              ]);
