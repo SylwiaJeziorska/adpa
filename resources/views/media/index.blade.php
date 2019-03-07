@@ -32,6 +32,7 @@
                         <th>Date</th>
                         <th>Titre</th>
                         <th>Url</th>
+                        <th>T</th>
                         <th></th>
                         <th></th>
 
@@ -40,16 +41,16 @@
                     <tbody>
                     @foreach($medias as $media)
                         <tr>
-                            <td><nobr>{{($media['created_at']->format('d-m-Y '))}}</nobr></td>
+                            <td><nobr>{{($media['published_at'])}}</nobr></td>
                             <td>{{$media['title']}}</td>
                             <td>{{public_path("img/" .$media['file_name'])}}</td>
 
                             <td><a target="_blank" class="btn btn-success btn-sm" href="{{route('media.show',$media['id'])}}">Télécharger</a>
                             </td>
 
+                            <td><a class="btn btn-default btn-sm" href="{{route('media.edit',$media)}}">Modifier</a></td>
+
                             <td>
-
-
                                 <form onsubmit="return confirm('Are you sure you want to delete?')"
                                       action="{{route('media.destroy',$media['id'])}}"
                                       method="post"

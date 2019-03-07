@@ -8,7 +8,8 @@
 
                         <div class="panel panel-default" style="margin: 0">
                             <ul class="list-group">
-                                <li class="list-group-item "><a href="{{route('post.create')}}">Ajouter une actualité</a>
+                                <li class="list-group-item "><a href="{{route('post.create')}}">Ajouter une
+                                        actualité</a>
 
                                 </li>
                             </ul>
@@ -24,7 +25,7 @@
                     </div>
                 </div>
                 <div class="col-md-8 col-md-offset-1 ">
-                  <h1>Liste des actualités</h1>
+                    <h1>Liste des actualités</h1>
                     @if(session('message'))
                         <div class='alert alert-success'>
                             {{ session('message') }}
@@ -54,40 +55,40 @@
                                 <td>{!! str_limit($post['content'], 200,'...')!!}</td>
                                 <td><a class="btn btn-default btn-sm"
                                        href="{{route('post.show',$post['id'])}}">Aperçu</a></td>
-@if(Auth::user()->role )
+                                @if(Auth::user()->role )
 
 
-                                <td><a class="btn btn-default btn-sm" href=" {{route('post.edit', $post)}}">
-                                        Modifier
-                                    </a>
-                                </td>
-                                <td>
+                                    <td><a class="btn btn-default btn-sm" href=" {{route('post.edit', $post)}}">
+                                            Modifier
+                                        </a>
+                                    </td>
+                                    <td>
 
-                                </td>
-                                <td>
-                                    <form method="post" action="{{route('send', $post['id'])}}">
-                                        {{csrf_field()}}
+                                    </td>
+                                    <td>
+                                        <form method="post" action="{{route('send', $post['id'])}}">
+                                            {{csrf_field()}}
 
-                                        <input type="submit" class="btn btn-default btn-sm">
+                                            <input type="submit" class="btn btn-default btn-sm">
 
-                                    </form>
-                                </td>
-                                <td>
+                                        </form>
+                                    </td>
+                                    <td>
 
-                                    <form onsubmit="return confirm('Are you sure you want to delete?')"
-                                          action="{{route('post.destroy',$post['id'])}}"
-                                          method="post"
-                                          style="display: inline">
-                                        {{csrf_field()}}
-                                        {{method_field('DELETE')}}
-                                        <button type="submit" class="btn btn-danger cursor-pointer  btn-sm">
-                                            Supprimer
-                                            <!-- <i class="text-danger fa fa-remove"></i> -->
-                                        </button>
-                                    </form>
+                                        <form onsubmit="return confirm('Are you sure you want to delete?')"
+                                              action="{{route('post.destroy',$post['id'])}}"
+                                              method="post"
+                                              style="display: inline">
+                                            {{csrf_field()}}
+                                            {{method_field('DELETE')}}
+                                            <button type="submit" class="btn btn-danger cursor-pointer  btn-sm">
+                                                Supprimer
+                                                <!-- <i class="text-danger fa fa-remove"></i> -->
+                                            </button>
+                                        </form>
 
-                                    @endif
-                                </td>
+                                        @endif
+                                    </td>
                             </tr>
                         @endforeach
                         </tbody>

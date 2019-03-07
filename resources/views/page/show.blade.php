@@ -6,7 +6,7 @@
 
       @if($page->modelId==null || $page->modelId==0 )
 <div class="pageTitle col-sm-10 col-sm-offset-1">
-  <h1>{!! $page->title !!}</h1>
+  <h1>{!! $page->title !!} ++</h1>
 
 </div>
 <div class="col-sm-10 col-sm-offset-1">
@@ -45,14 +45,14 @@
                 @endisset
                 @isset($medias)
 
-                    <h2>Les Pv</h2>
+                    <h2>PDF</h2>
                     <div class="pdfWrapper">
                         @foreach($medias as $media)
                             <div class="pdf" style="margin:20px;">
                                 <a target="_blank"href="{{route('media.show',$media['id'])}}">
                                     <img height="50px" src="{{ URL::to('/') }}/img/pdf.png">
                                 </a>
-                                <p>{{$media['created_at']->toDateString()}}</p>
+                                <p>{{$media['published_at']}}</p>
                                 <p>{{$media['title']}}</p>
 
                             </div>

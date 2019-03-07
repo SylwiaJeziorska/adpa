@@ -40,6 +40,7 @@ class MediaController extends Controller
      */
     public function store(Request $request)
     {
+//        dd($request);
         if ($request->file('image')) {
         $this->validate($request, ['image' => 'mimes:pdf']);
 
@@ -51,6 +52,9 @@ class MediaController extends Controller
             $img->original_name = $image->getClientOriginalName();
             $img->title = $request->title;
             $img->file_name = $file_name;
+            $img->page_id = $request->page_id;
+            $img->published_at = $request->published_at;
+
             $img->save();
             return redirect('media');
 
@@ -81,9 +85,11 @@ class MediaController extends Controller
      * @param  \App\media  $media
      * @return \Illuminate\Http\Response
      */
-    public function edit(media $media)
+    public function edit( $media)
     {
-        //
+        $theMedia = Media::find($media);
+        return view('/media.edit',['media' => $theMedia]);
+
     }
 
     /**
@@ -93,9 +99,13 @@ class MediaController extends Controller
      * @param  \App\media  $media
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, media $media)
+    public function update(Request $request,  $media)
     {
-        //
+        $theMedia = Media::findOrFail($media);
+        $input = $request->all();
+        $theMedia->fill($input)->save();
+        return redirect('media');
+
     }
 
     /**

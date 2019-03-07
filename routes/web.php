@@ -18,7 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-// Route::get('/userdata', 'HomeController@userdata')->name('userdata');
+ Route::get('/userdata', 'HomeController@userdata')->name('userdata');
 
 Route::get('/newPassword', function (){
     return view('auth/passwords/changepassword');

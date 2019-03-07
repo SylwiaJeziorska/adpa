@@ -1,18 +1,14 @@
 @extends('layouts.app')
 @section('content')
     <div class="container">
+        <div class="pageTitle col-sm-12">
+            <h1>Actualites</h1>
 
+        </div>
         <div class="col-md-7">
           <table class="table  table-striped">
               <thead>
-              <tr>
-                  <th>Date</th>
-                  <th>Titre</th>
 
-                  <th>Contenu</th>
-
-
-              </tr>
               </thead>
               <tbody>
               @foreach($posts as $post)
@@ -21,9 +17,8 @@
                           <nobr>{{($post['created_at']->format('d-m-Y '))}}</nobr>
                       </td>
                       <td>{{$post['title']}}</td>
-                      <td>{!! str_limit($post['content'], 200,'...')!!}</td>
-                      <td><a class="btn btn-default btn-sm"
-                             href="{{route('post.show',$post['id'])}}">Aperçu</a></td>
+                      <td>{!! str_limit($post['content'], 200,'...')!!}<a class="" href="{{route('post.show',$post['id'])}}">lire la suite</a></td>
+                      <td></td>
 
                       </td>
                   </tr>
@@ -32,7 +27,7 @@
           </table>
         </div>
         <div class="col-md-4 col-md-offset-1">
-          <h2>Les Pv</h2>
+          <h2>Pdf</h2>
           <div class="pdfWrapper">
               @foreach($medias as $media)
                   <div class="pdf" style="margin:20px;">
