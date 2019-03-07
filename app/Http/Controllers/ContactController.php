@@ -40,7 +40,7 @@ class ContactController extends Controller
         );
         Mail::send('emails.contact', $data, function($message)use ($data){
             $message->from('mailjet@comite-adpa.fr');
-            $message->to('comite-entreprise@adpa38.fr');
+            $message->to('comite@adpa38.fr');
             $message->replyTo($data['email']);
             $message->subject('[www.comite-adpa.fr] '.$data['subject']);
 

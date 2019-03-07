@@ -10,7 +10,7 @@
             34 avenue de l’Europe, le Trident Bat A, 38100 Grenoble<br/>
             04 76 22 82 84,<br/>
             Les lundis et mercredis de 14h-17h<br/>
-            <span>comite-entreprise@adpa38.fr</span>
+            <span>comite@adpa38.fr</span>
         </p>
         </div>
         <div class="legales">

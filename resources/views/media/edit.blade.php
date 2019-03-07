@@ -42,7 +42,7 @@
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">Titre</label>
-                            <input type="text" value='' class="form-control" placeholder="{{$media->title}}" name="title">
+                            <input type="text" class="form-control" value = '{{$media->title}}' placeholder="{{$media->title}}" name="title">
 
                         </div>
                         <div class="form-group">
