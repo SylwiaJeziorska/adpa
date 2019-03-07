@@ -75,7 +75,7 @@
                                 <input name="image" type="file"><br/>
 
                             </div>
-                              @endif
+                              @else
                             <div class="form-group row">
 
 
@@ -91,7 +91,7 @@
 
 
                             </div>
-
+                            @endif
 
                     </div>
 
