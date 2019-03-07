@@ -48,12 +48,12 @@
                     <div class="form-group">
                         <label for="exampleInputFile">Page</label><br/>
                         <select id="page_id" name="page_id">
+                          <option value="0">----</option>
                             <option value="17">Le comité</option>
                             <option value="18">Prestations</option>
                             <option value="19">Billetterie</option>
                             <option value="20">Réductions</option>
                             <option value="21">Les dates clés</option>
-                            <option value="audi">Page 6</option>
                         </select>
                     </div>
                     <div class="form-group">

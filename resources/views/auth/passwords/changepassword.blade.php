@@ -52,12 +52,7 @@
                             <div class="col-md-6">
                                 <label for="name" class="standard">Nom</label><br/>
 
-                                <input id="name" type="text" class="form-control" placeholder="Nom *" name="name" value="<?php if ( Auth::user()->name) {
-                                echo Auth::user()->name ;
-                                  }else{
-                                    echo  old('name') ;
-                                  } ?>"
-                              required autofocus>
+                                <input id="name" type="text" class="form-control" placeholder="Nom *" name="name" value="<?php if ( Auth::user()->name) {echo Auth::user()->name ;}else{echo  old('name') ;}?>"required autofocus>
 
                                 @if ($errors->has('name'))
                                     <span class="help-block">
@@ -68,12 +63,7 @@
                             <div class="col-md-6">
                                 <label for="prenom" class="standard">Prénom</label><br/>
 
-                                <input id="prenom" type="text" class="form-control" placeholder="Prénom *" name="prenom" value="<?php if ( Auth::user()->prenom) {
-                                echo Auth::user()->prenom ;
-                                  }else{
-                                    echo  old('prenom') ;
-                                  } ?>
-                                " autofocus>
+                                <input id="prenom" type="text" class="form-control" placeholder="Prénom " name="prenom" value="<?php if(Auth::user()->prenom){echo Auth::user()->prenom;}else{echo old('prenom');}?>" autofocus>
 
                                 @if ($errors->has('prenom'))
                                     <span class="help-block">
@@ -89,11 +79,7 @@
                             <div class="col-md-12">
                                 <label for="email" class="standard">E-Mail</label><br/>
 
-                                <input id="email" type="email" placeholder="E-Mail *" class="form-control" name="email" value="<?php if (Auth::user()->email) {
-                                echo Auth::user()->email ;
-                                  }else{
-                                    echo  old('email') ;
-                                  } ?>" required>
+                                <input id="email" type="email" placeholder="E-Mail *" class="form-control" name="email" value="<?php if (Auth::user()->email) {echo Auth::user()->email ;}else{echo  old('email') ;} ?>" required>
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -145,28 +131,13 @@
                             <div class="col-md-12">
                                 <label  class="standard">Adresse</label><br/>
 
-                                <input style="margin-bottom: 10px;" id="address" type="text" placeholder="Adresse" class="form-control" name="address" value="<?php if ( Auth::user()->address) {
-                                echo Auth::user()->address ;
-                                  }else{
-                                    echo  old('address') ;
-                                  } ?>
-                                " >
+                                <input style="margin-bottom: 10px;" id="address" type="text" placeholder="Adresse" class="form-control" name="address" value="<?php if ( Auth::user()->address) {echo Auth::user()->address ;}else{echo  old('address') ;} ?>" >
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <input id="cp" type="text" placeholder="Code postal" class="form-control" name="cp" value="<?php if ( Auth::user()->cp) {
-                                        echo Auth::user()->cp ;
-                                          }else{
-                                            echo  old('cp') ;
-                                          } ?>
-                                        " >
+                                        <input id="cp" type="text" placeholder="Code postal" class="form-control" name="cp" value="<?php if ( Auth::user()->cp) {echo Auth::user()->cp ;}else{echo  old('cp') ;} ?>" >
                                     </div>
                                     <div class="col-md-6">
-                                        <input id="city" type="text" placeholder="Ville" class="form-control" name="city"  value="<?php if ( Auth::user()->city) {
-                                        echo Auth::user()->city ;
-                                          }else{
-                                            echo  old('city') ;
-                                          } ?>
-                                        " >
+                                        <input id="city" type="text" placeholder="Ville" class="form-control" name="city"  value="<?php if ( Auth::user()->city) {echo Auth::user()->city ;}else{echo  old('city') ;} ?>" >
                                     </div>
                                 </div>
 
@@ -182,12 +153,7 @@
                             <div class="col-md-12">
                                 <label  for="phone"class="standard">Tel</label><br/>
 
-                                <input id="tel" type="text" placeholder="Tel" class="form-control" name="tel"  value="<?php if ( Auth::user()->tel) {
-                                echo Auth::user()->tel ;
-                                  }else{
-                                    echo  old('tel') ;
-                                  } ?>
-                                " >
+                                <input id="tel" type="text" placeholder="Tel" class="form-control" name="tel"  value="<?php if ( Auth::user()->tel) {echo Auth::user()->tel ;}else{echo  old('tel') ;} ?>" >
 
                                 @if ($errors->has('phone'))
                                     <span class="help-block">

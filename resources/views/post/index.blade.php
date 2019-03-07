@@ -13,11 +13,17 @@
               <tbody>
               @foreach($posts as $post)
                   <tr>
-                      <td>
+                      <!-- <td>
                           <nobr>{{($post['created_at']->format('d-m-Y '))}}</nobr>
-                      </td>
-                      <td>{{$post['title']}}</td>
-                      <td>{!! str_limit($post['content'], 200,'...')!!}<a class="" href="{{route('post.show',$post['id'])}}">lire la suite</a></td>
+                      </td> -->
+                      <td></td>
+                      @if(strlen($post['content']) > 600)
+                      <td>{!! str_limit($post['content'], 600,'...')!!}
+                        <a class="" href="{{route('post.show',$post['id'])}}">lire la suite</a></td>
+                        @else
+                        <td><h2>{{$post['title']}}</h2> {!! str_limit($post['content'], 600,'...')!!}
+                        </td>
+                        @endif
                       <td></td>
 
                       </td>
@@ -28,13 +34,13 @@
         </div>
         <div class="col-md-4 col-md-offset-1">
           <h2>Pdf</h2>
-          <div class="pdfWrapper">
+          <div class="pdfWrapper row" >
               @foreach($medias as $media)
-                  <div class="pdf" style="margin:20px;">
+                  <div class="pdf col-md-5" >
                       <a target="_blank"href="{{route('media.show',$media['id'])}}">
                           <img height="50px" src="{{ URL::to('/') }}/img/pdf.png">
                       </a>
-                      <p>{{$media['created_at']->toDateString()}}</p>
+                      <!-- <p>{{$media['created_at']->toDateString()}}</p> -->
                       <p>{{$media['title']}}</p>
 
                   </div>

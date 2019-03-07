@@ -45,22 +45,23 @@
                 @endisset
                 @isset($medias)
 
-                    <h2>PDF</h2>
-                    <div class="pdfWrapper">
+
                         @foreach($medias as $media)
+                          @isset($media)
+                          <h2>PDF</h2>
+                          <div class="pdfWrapper">
                             <div class="pdf" style="margin:20px;">
                                 <a target="_blank"href="{{route('media.show',$media['id'])}}">
                                     <img height="50px" src="{{ URL::to('/') }}/img/pdf.png">
                                 </a>
-                                <p>{{$media['published_at']}}</p>
                                 <p>{{$media['title']}}</p>
 
                             </div>
 
-
-
+                            </div>
+                            @endisset
                         @endforeach
-                    </div>
+
 
                 @endisset
             </div>

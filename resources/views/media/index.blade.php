@@ -32,7 +32,7 @@
                         <th>Date</th>
                         <th>Titre</th>
                         <th>Url</th>
-                        <th>T</th>
+                        <th></th>
                         <th></th>
                         <th></th>
 

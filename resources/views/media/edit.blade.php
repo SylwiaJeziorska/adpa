@@ -44,21 +44,22 @@
                             <label for="exampleInputEmail1">Titre</label>
                             <input type="text" class="form-control" value = '{{$media->title}}' placeholder="{{$media->title}}" name="title">
 
+
                         </div>
                         <div class="form-group">
                             <label for="exampleInputFile">Date de publication </label><br/>
-                            <input type="date" class="form-control-file" name="published_at">
+                            <input value="{{$media->published_at}}" type="date" class="form-control-file" name="published_at">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputFile">Page</label><br/>
 
                             <select id="page_id" name="page_id">
+                              <option value="0" <?php echo($media->page_id == null  || $media->page_id =='0'  ? "selected='selected'" : ""); ?> >----</option>
                                 <option value="17" <?php echo($media->page_id == '17' ? "selected='selected'" : ""); ?> >Le comité</option>
                                 <option value="18">Prestations</option>
                                 <option value="19" <?php echo($media->page_id == '19' ? "selected='selected'" : ""); ?> >Billetterie</option>
                                 <option value="20">Réductions</option>
                                 <option value="21">Les dates clés</option>
-                                <option value="0" <?php echo($media->page_id == '0' ? "selected='selected'" : ""); ?> >Page 6</option>
                             </select>
                         </div>
                     </div>
