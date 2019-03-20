@@ -32,6 +32,7 @@
                         <th>Date</th>
                         <th>Titre</th>
                         <th>Url</th>
+                        <th>Page</th>
                         <th></th>
                         <th></th>
                         <th></th>
@@ -44,7 +45,7 @@
                             <td><nobr>{{($media['published_at'])}}</nobr></td>
                             <td>{{$media['title']}}</td>
                             <td>{{public_path("img/" .$media['file_name'])}}</td>
-
+                            <td>{{ $media->page['title']}}</td>
                             <td><a target="_blank" class="btn btn-success btn-sm" href="{{route('media.show',$media['id'])}}">Télécharger</a>
                             </td>
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use App\media;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Middleware\CheckUser;
 
@@ -24,7 +25,7 @@ class PostController extends Controller
     public function index()
     {
       $posts = Post::all()->sortByDesc("created_at");
-      $medias = Media::All()->sortByDesc("created_at");
+      $medias = Media::All()->where('published_at','<',Carbon::now()->toDateTimeString())->sortByDesc("created_at");
 
       return view('post.index', ['posts' => $posts, 'medias'=>$medias]);
     }

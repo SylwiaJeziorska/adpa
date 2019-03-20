@@ -162,15 +162,23 @@
                                 @endif
                             </div>
                         </div>
+                        @if(Auth::user()->email==null)
+                            <label class="standard">
+                                <input type="checkbox" name="RGPD" > En cochant cette case j'accepte enregistration les données ...</label>
+
+                        @endif
 
 
                         <div class="form-group">
                             <div class="col-md-12 ">
-                              <a class="btn btn-default" style="color:#847F80;" href="{{ route('logout') }}"
-                                 onclick="event.preventDefault();
+                                @if(Auth::user()->email==null)
+                                    <a class="btn btn-default" style="color:#847F80;" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
                                                    document.getElementById('logout-form').submit();">
-                                  Recommencer
-                              </a>
+                                        Recommencer
+                                    </a>
+                                @endif
+
                                 <button type="submit" class="btn btn-default">
                                     Enregistrer
                                 </button>

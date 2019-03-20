@@ -27,15 +27,15 @@
               </tbody>
           </table>
         </div>
-        <div class="col-md-4 col-md-offset-1">
+        <div class="col-md-4 ">
           <div class="pdfWrapper row" >
               @foreach($medias as $media)
-                  <div class="pdf col-md-5" >
-                      <a target="_blank"href="{{route('media.show',$media['id'])}}">
+                  <div class="pdf col-md-12" >
+                      <a class="col-md-2" target="_blank"href="{{route('media.show',$media['id'])}}">
                           <img height="50px" src="{{ URL::to('/') }}/img/pdf.png">
                       </a>
                       <!-- <p>{{$media['created_at']->toDateString()}}</p> -->
-                      <p>{{$media['title']}}</p>
+                      <p class="col-md-10">{{$media['title']}}</p>
 
                   </div>
 

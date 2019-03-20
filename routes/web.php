@@ -44,3 +44,4 @@ Route::get('/usersList', 'UserController@usersList')->name('usersList');
 Route::get('/admin/a', 'PostController@index4admin')->name('index4admin');
 Route::get('/user/{user}/edit/', 'UserController@edit')->name('userEdit');
 Route::put('/user/{user}/update/', 'UserController@userUpdate')->name('userUpdate');
+Route::delete('/user/{user}/userDestroy', 'UserController@destroy')->name('userDestroy');

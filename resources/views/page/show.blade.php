@@ -48,12 +48,12 @@
 
                         @foreach($medias as $media)
                           @isset($media)
-                          <div class="pdfWrapper">
-                            <div class="pdf" style="margin:20px;">
-                                <a target="_blank"href="{{route('media.show',$media['id'])}}">
+                          <div class="pdfWrapper col-md-12">
+                            <div class="pdf col-md-12" >
+                                <a  class="col-md-2" target="_blank"href="{{route('media.show',$media['id'])}}">
                                     <img height="50px" src="{{ URL::to('/') }}/img/pdf.png">
                                 </a>
-                                <p>{{$media['title']}}</p>
+                                <p class="col-md-10">{{$media['title']}}</p>
 
                             </div>
 

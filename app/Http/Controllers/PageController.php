@@ -6,6 +6,7 @@ use App\Http\Middleware\CheckUser;
 use App\media;
 use App\Page;
 use App\Post;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -67,7 +68,7 @@ class PageController extends Controller
             return view('page.show',  ['page' => $page, 'posts'=>$posts]);
 
         }elseif ($page->modelId==2){
-            $medias = $page->media()->get();
+            $medias = $page->media()->where('published_at','<',Carbon::now()->toDateTimeString())->get();
             return view('page.show',  ['page' => $page, 'medias'=>$medias]);
 
         }else{

@@ -51,7 +51,8 @@
                                 <div class="checkbox ">
                                     <label class="standard">
                                         <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Se souvenir de moi
-                                    </label>
+                                    </label><br/>
+
                                     <button style="float: right" type="submit" class="btn btn-warning">
                                         Se connecter
                                     </button>

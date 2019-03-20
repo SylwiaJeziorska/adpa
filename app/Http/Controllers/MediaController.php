@@ -16,8 +16,10 @@ class MediaController extends Controller
     public function index()
     {
 
-        $medias = Media::all()->sortByDesc("created_at");
-        
+        $medias = Media::with(['page'])->orderBy("published_at","desc")->get();
+//        $test = Media::with(['page'])->get();
+//        dd($medias);
+//        $page = $medias->page()-get();
         return view('media.index', compact('medias'));
     }
 

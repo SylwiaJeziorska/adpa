@@ -111,5 +111,14 @@ class UserController extends Controller
         $users = User::All();
       return view('users.usersList', compact('users'));
     }
+    public function destroy(User $user)
+    {
+
+        User::destroy($user->id);
+
+        return back();
+
+
+    }
 
 }
