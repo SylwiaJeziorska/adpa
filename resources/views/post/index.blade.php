@@ -6,17 +6,14 @@
 
         </div>
         <div class="col-md-7">
-          <table class="table  table-striped">
-              <thead>
+          <table class=" ">
 
-              </thead>
               <tbody>
               @foreach($posts as $post)
                   <tr>
                       <!-- <td>
                           <nobr>{{($post['created_at']->format('d-m-Y '))}}</nobr>
                       </td> -->
-                      <td></td>
                       @if(strlen($post['content']) > 600)
                       <td>{!! str_limit($post['content'], 600,'...')!!}
                         <a class="" href="{{route('post.show',$post['id'])}}">lire la suite</a></td>
@@ -24,16 +21,13 @@
                         <td><h2>{{$post['title']}}</h2> {!! str_limit($post['content'], 600,'...')!!}
                         </td>
                         @endif
-                      <td></td>
 
-                      </td>
                   </tr>
               @endforeach
               </tbody>
           </table>
         </div>
         <div class="col-md-4 col-md-offset-1">
-          <h2>Pdf</h2>
           <div class="pdfWrapper row" >
               @foreach($medias as $media)
                   <div class="pdf col-md-5" >

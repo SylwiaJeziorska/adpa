@@ -17,7 +17,7 @@ class MediaController extends Controller
     {
 
         $medias = Media::all()->sortByDesc("created_at");
-
+        
         return view('media.index', compact('medias'));
     }
 

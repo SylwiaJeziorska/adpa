@@ -69,7 +69,7 @@
                                         <form method="post" action="{{route('send', $post['id'])}}">
                                             {{csrf_field()}}
 
-                                            <input type="submit" class="btn btn-default btn-sm">
+                                            <input type="submit" value="Envoyer" class="btn btn-default btn-sm">
 
                                         </form>
                                     </td>

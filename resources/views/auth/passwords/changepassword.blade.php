@@ -105,7 +105,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('new-password') ? ' has-error' : '' }}">
-                            {{--<label for="new-password" class="col-md-4 control-label">Nouveau mot de passe</label>--}}
+                            {{--<label for="new-password" class="col-md-4 control-label">Nouveau mot de passe </label>--}}
 
                             <div class="col-md-12">
                                 <input id="new-password" placeholder="Nouveau mot de passe *" type="password" class="form-control" name="new-password" >
@@ -169,7 +169,7 @@
                               <a class="btn btn-default" style="color:#847F80;" href="{{ route('logout') }}"
                                  onclick="event.preventDefault();
                                                    document.getElementById('logout-form').submit();">
-                                  Annuler
+                                  Recommencer
                               </a>
                                 <button type="submit" class="btn btn-default">
                                     Enregistrer

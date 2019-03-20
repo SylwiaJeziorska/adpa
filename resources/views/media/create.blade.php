@@ -42,8 +42,8 @@
 
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputFile">Date de publication </label><br/>
-                        <input type="date" class="form-control-file" name="published_at">
+                        <label for="exampleInputFile">Date de publication (aaaa-mm-jj)</label><br/>
+                        <input  class="form-control-file" name="published_at" value="{{date('Y-m-d')}}">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputFile">Page</label><br/>
