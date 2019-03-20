@@ -164,7 +164,7 @@
                         </div>
                         @if(Auth::user()->email==null)
                             <label class="standard">
-                                <input type="checkbox" name="RGPD" > En cochant cette case j'accepte enregistration les données ...</label>
+                                <input type="checkbox" name="rgpd"  required > En cochant cette case j'accepte enregistration les données ...</label>
 
                         @endif
 

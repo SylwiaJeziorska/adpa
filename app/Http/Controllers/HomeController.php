@@ -106,10 +106,16 @@ class HomeController extends Controller
                  ]);
              }
 
+
+
              $user->password = bcrypt($request->get('new-password'));
              $user->password_change_at =Carbon::now();
 
          }
+        if ($request->get('rgpd')=='on' ){
+            $user->rgpd =Carbon::now();
+
+        }
         $user->email =$request['email'];
         $user->name =$request['name'];
 
