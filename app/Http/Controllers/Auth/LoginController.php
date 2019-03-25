@@ -28,14 +28,28 @@ class LoginController extends Controller
      */
 
    protected $redirectTo =  '/newPassword';
-    protected function authenticated(Request $request, $user)
+    public function cancellation(Request $request)
     {
-        if ( $user-> password_change_at == null  ) {
 
-            return redirect()->route('newPassword');
-        }
 
-        return redirect('/page/6');
+    }
+    protected function authenticated(Request $request, $user)
+
+
+    {
+
+        $cancellation =  $request->has('cancellation');
+       if ($cancellation){
+           return redirect()->route('confirmation');
+       }else{
+           if ( $user-> password_change_at == null  ) {
+
+               return redirect()->route('newPassword');
+           }
+
+           return redirect('/page/6');
+       }
+
     }
     /**
      * Create a new controller instance.

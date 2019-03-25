@@ -46,7 +46,7 @@
                             <td><a class="btn btn-default btn-sm" href="{{route('userEdit',$user)}}">Modifier</a></td>
 
                             <td>
-
+                            @if($user['role']!=='admin')
                                 <form onsubmit="return confirm('Are you sure you want to delete?')"
                                       action="{{route('userDestroy',$user['id'])}}"
                                       method="post"
@@ -58,7 +58,7 @@
                                         <!-- <i class="text-danger fa fa-remove"></i> -->
                                     </button>
                                 </form>
-
+                            @endif
 
                             </td>
                         </tr>

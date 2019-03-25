@@ -14,6 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/cancellation', function () {
+    return view('users.cancellation');
+});
+Route::get('/confirmation', function () {
+    return view('users.CancellationConfirmation');
+})->name('confirmation');;
 
 Auth::routes();
 
@@ -45,3 +51,4 @@ Route::get('/admin/a', 'PostController@index4admin')->name('index4admin');
 Route::get('/user/{user}/edit/', 'UserController@edit')->name('userEdit');
 Route::put('/user/{user}/update/', 'UserController@userUpdate')->name('userUpdate');
 Route::delete('/user/{user}/userDestroy', 'UserController@destroy')->name('userDestroy');
+//Route::get('/cancellation', 'Auth\LoginController@cancellation')->name('cancellation');

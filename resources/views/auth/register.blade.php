@@ -1,47 +1,28 @@
+@include('head')
 
-<div class="container">
+<div class="container" id="login-blade">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Register</div>
+        <div class="col-md-4 col-md-offset-4 logo" id="logo">
+            <img class="welcome-logo" width="100px" src="{{ URL::to('/') }}/img/logo1.png">
+            <h2>ADPA Comité d’entreprise</h2>
+        </div>
 
-                <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('register') }}">
+    </div>
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="panel panel-default login">
+                <div class="panel-body" id="loginForm">
+                    <form method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Name</label>
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }} formPadding">
+                            <label class='first' for="email">Identifiant</label><br/>
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+                            <label for="email" class="standard">E-mail / Matricule</label><br/>
 
-                                @if ($errors->has('name'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-                        <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
-                            <label for="username" class="col-md-4 control-label">Username</label>
-
-                            <div class="col-md-6">
-                                <input id="username" type="text" class="form-control" name="username" value="{{ old('username') }}" required="">
-
-                                @if ($errors->has('username'))
-
-                                    {{ $errors->first('username') }}
-
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
-
+                            <div>
+                                <input style="width: 100%" type="text" name="email" value="{{ old('email') }}" required
+                                       autofocus>
                                 @if ($errors->has('email'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>
@@ -50,38 +31,49 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
+                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }} formPadding ">
+                            <label for="password">Mot de passe</label>
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
+                            <div>
+                                <input style="width: 100%" id="password" type="password" name="password" reqired>
 
                                 @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
+                                    <span class="help-block"> <strong>{{ $errors->first('password') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
+                        <div class="form-group formPadding lastGroup">
+                            <div>
 
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Register
+                                <button style="float: right" type="submit" class="btn btn-denger">
+                                    Se désabonner
                                 </button>
                             </div>
+
                         </div>
-                    </form>
                 </div>
+
+
+                </form>
             </div>
         </div>
     </div>
 </div>
+</div>
+<script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function () {
+        $('.first').css('display', 'none');
+        $("#btnFirstTime").click(function () {
+            $('.first').css('display', 'inline');
+            $('.standard').hide();
+
+        });
+    });
+
+</script>

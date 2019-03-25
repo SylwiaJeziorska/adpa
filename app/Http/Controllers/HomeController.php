@@ -76,6 +76,7 @@ class HomeController extends Controller
         else
             var_dump($response->getStatus());
     }
+
     public function changePassword(Request $request){
         $user = Auth::user();
          $request->get('new-password');
