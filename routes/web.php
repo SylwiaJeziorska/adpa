@@ -14,8 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/cancellation', function () {
-    return view('users.cancellation');
+Route::get('/cancellation/{email}', function ($email) {
+    return view('users.cancellation',['email' => $email]);
 });
 Route::get('/confirmation', function () {
     return view('users.CancellationConfirmation');

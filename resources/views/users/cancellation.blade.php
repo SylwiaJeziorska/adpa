@@ -1,5 +1,4 @@
 @include('head')
-
 <div class="container" id="login-blade" >
     <div class="row">
         <div class="col-md-4 col-md-offset-4 logo" id="logo">
@@ -21,7 +20,7 @@
                             <label for="email" class="standard">E-mail / Matricule</label><br/>
 
                             <div >
-                                <input style="width: 100%" type="text"  name="email"  value="{{ old('email') }}" required autofocus>
+                                <input style="width: 100%" type="text"  name="email"  value="{{$email}}" required autofocus>
                                 @if ($errors->has('email'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>
