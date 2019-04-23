@@ -22,7 +22,7 @@ class RedirectIfAuthenticated
             if ( Auth::user()-> password_change_at == null ) {
                 return redirect()->route('newPassword');
             }
-            return redirect()->route('home');
+            return redirect()->route('post');
 
         }
 

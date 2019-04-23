@@ -37,9 +37,9 @@ class LoginController extends Controller
 
 
     {
-
         $cancellation =  $request->has('cancellation');
        if ($cancellation){
+
            return redirect()->route('confirmation');
        }else{
            if ( $user-> password_change_at == null  ) {

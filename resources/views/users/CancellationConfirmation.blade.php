@@ -18,7 +18,7 @@
                                     <!-- <i class="text-danger fa fa-remove"></i> -->
                                 </button>
                             </form>
-                            <a href='{{ url('post') }}' class="btn btn-info cursor-pointer  btn-lg"> no</a>
+                            <a href='{{ url('post') }}' class="btn btn-info cursor-pointer  btn-lg"> Non</a>
                         </div>
 
                     </div>

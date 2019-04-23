@@ -51,6 +51,6 @@
         "preferred-install": "dist",
         "sort-packages": true,
         "optimize-autoloader": true,
-"platform": {"php": " 7.0.30"}
+        "platform": {"php": " 7.0.30"}
     }
 }

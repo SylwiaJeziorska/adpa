@@ -31,7 +31,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('/post');
     }
     public function admin(){
         $usersNumber = User::whereNotNull('email')->get()->count();
@@ -137,44 +137,44 @@ class HomeController extends Controller
     }
 
 
-//    public function userdata()
-//    {
-//        $file = public_path('file/Data.csv');
-//
-//        if (!file_exists($file) || !is_readable($file)) {
-//            return false;
-//
-//        }
-//
-//        $delimiter = ',';
-//        $header = null;
-//        $userdata = array();
-//        if (($handle = fopen($file, 'r')) !== false) {
-//            while (($row = fgetcsv($handle, 1000, $delimiter)) !== false) {
-//                if (!$header)
-//                    $header = $row;
-//                else
-//                    $userdata[] = array_combine($header, $row);
-//            }
-//            fclose($handle);
-//        }
-//
-//        for ($i =0 ; $i <604; $i++) {
-//
-//            $newPassword = Hash::make($userdata[$i]['password']);
-//
-//            $user = new User;
-//            $user->username = $userdata[$i]['username'];
-//            $user->password = $newPassword;
-////            print_r($user);
-//            $user->save();
-//
-//
-//        }
-//
-//
-////        DB::table('users')->insert($data);
-////        return 'Jobi done ';
-//
-//    }
+   public function userdata()
+   {
+       $file = public_path('file/Data.csv');
+
+       if (!file_exists($file) || !is_readable($file)) {
+           return false;
+
+       }
+
+       $delimiter = ',';
+       $header = null;
+       $userdata = array();
+       if (($handle = fopen($file, 'r')) !== false) {
+           while (($row = fgetcsv($handle, 1000, $delimiter)) !== false) {
+               if (!$header)
+                   $header = $row;
+               else
+                   $userdata[] = array_combine($header, $row);
+           }
+           fclose($handle);
+       }
+
+       for ($i =5178; $i <5180; $i++) {
+
+           $newPassword = Hash::make($userdata[$i]['password']);
+
+           $user = new User;
+           $user->username = $userdata[$i]['username'];
+           $user->password = $newPassword;
+//            print_r($user);
+           $user->save();
+
+
+       }
+
+
+//        DB::table('users')->insert($data);
+//        return 'Jobi done ';
+
+   }
 }
